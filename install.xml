@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template name="autosales">
+	<title>AutoSales</title>
+	<summary>Template for Subrion Autos Script</summary>
+	<author>Gleb Surinov</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>1.0.0</version>
+	<date>2015-12-04</date>
+	<compatibility>4.0</compatibility>
+
+	<dependency type="package" exist="1">autos</dependency>
+
+	<layout>
+		<position menu="1" movable="0">account</position>
+		<position menu="1" movable="0">mainmenu</position>
+
+		<position>teaser</position>
+		<position>popular_makes</position>
+		<position>landing</position>
+		<position>featured</position>
+		<position>recent</position>
+		<position>verytop</position>
+		<position>top</position>
+		<position>bottom</position>
+		<position>verybottom</position>
+
+		<section name="content">
+			<position fixed="1">left</position>
+			<position width="9">center</position>
+		</section>
+
+		<section name="footer-blocks">
+			<position width="3">footer1</position>
+			<position width="3">footer2</position>
+			<position width="3">footer3</position>
+			<position width="3">footer4</position>
+		</section>
+	</layout>
+
+	<screenshots>
+		<screenshot name="1.jpg"><![CDATA[Home page]]></screenshot>
+		<screenshot name="2.jpg"><![CDATA[View car page]]></screenshot>
+		<screenshot name="3.jpg"><![CDATA[Search cars with filters]]></screenshot>
+	</screenshots>
+
+	<configgroup name="template_autosales">Template</configgroup>
+
+	<config group="template_autosales" 
+		    name="autosales_divider1" 
+		    type="divider" 
+		    order="3000">General</config>
+
+	<config group="template_autosales" 
+		    name="max_top_menu_items" 
+		    type="text" 
+		    description="Max number of items in Main Menu"
+		    order="3002">7</config>
+
+	<config group="template_autosales"
+		    name="fixed_navbar" 
+		    type="hidden"
+		    order="3003" 
+		    values="1,0" 
+		    description="Fixed navbar">1</config>
+
+	<config group="template_autosales" 
+		    name="template_color_scheme" 
+		    type="hidden" 
+		    multiplevalues="default,dark" 
+		    description="Template color"
+		    order="3004">default</config>
+
+	<config group="template_autosales" 
+		    name="template_layout" 
+		    type="hidden" 
+		    multiplevalues="wide,boxed" 
+		    description="Template layout"
+		    order="3005">wide</config>
+
+	<config group="template_autosales" 
+		    name="website_bg" 
+		    type="image" 
+		    description="Header background"
+		    order="3006"><![CDATA[]]></config>
+
+	<config group="template_autosales"
+		    name="tools_as_floating_box" 
+		    type="radio"
+		    order="3007" 
+		    values="1,0" 
+		    description="Show Tools in floating box">1</config>
+
+	<config group="template_autosales" 
+		    name="autosales_divider2" 
+		    type="divider" 
+		    order="3030">Social links</config>
+	
+	<config group="template_autosales"
+			name="template_social"
+		    type="radio" 
+		    order="3031"
+		    values="1,0" 
+		    description="Show links">1</config>
+	<config group="template_autosales"
+			name="template_social_t"
+		    type="text"
+		    order="3032"
+		    show="template_social|1" 
+		    description="Twitter Link">https://twitter.com/IntelliantsLLC</config>
+	<config group="template_autosales"
+			name="template_social_f"
+		    type="text" 
+		    order="3033" 
+		    show="template_social|1" 
+		    description="Facebook Link">https://www.facebook.com/Intelliants</config>
+	<config group="template_autosales"
+			name="template_social_g"
+		    type="text" 
+		    order="3034" 
+		    show="template_social|1" 
+		    description="Google+ Link">https://plus.google.com/102500660503219569194/posts</config>
+	<config group="template_autosales"
+			name="template_social_y"
+		    type="text" 
+		    order="3035" 
+		    show="template_social|1" 
+		    description="You Tube Link">#</config>
+
+	<config group="template_autosales" 
+		    name="ckeditor_css" 
+		    type="hidden" 
+		    description="CKEditor CSS"
+		    order="3099">ckeditor.css</config>
+
+	<changeset>
+		<menu position="account" status="active">account</menu>
+		<menu position="footer1" status="active" header="1">bottom</menu>
+		<menu position="footer2" status="active" header="1" collapsible="0">autos</menu>
+
+		<block position="verytop" status="active" sticky="1" header="0">autos_search</block>
+		<block position="popular_makes" status="active" sticky="1" header="0">auto_make_list</block>
+		<block position="landing" status="active" pages="index" header="1" collapsible="0" order="99">auto_body_list</block>
+		<block position="by_year" status="active" pages="index" header="0">auto_year_list</block>
+		<block position="featured" status="active" sticky="0" pages="index" header="0">auto_featured</block>
+		<block position="recent" status="active" sticky="0" pages="index" header="0" collapsible="0">auto_recent</block>
+		<block position="verytop" status="active" pages="index" header="0">auto_sponsored</block>
+		<block position="left" status="active" pages="autos_view" header="0" order="2">autos_enquiry_form</block>
+		<block position="left" order="-1" status="active" pages="autos_view" header="0">autos_author</block>
+		<block position="tools" header="0" status="active" sticky="1" order="1">autos_tools</block>
+		<block position="verybottom" header="0" status="active" sticky="0" pages="autos_index,autos_index_latest,autos_index_featured,autos_index_popular,autos_index_random,search_autos,autos_models,autos_services,autos_service_view" order="99">auto_random</block>
+
+		<block position="landing" order="99" status="active" sticky="0" pages="index" header="0">latest_news</block>
+		<block position="left" status="active" pages="search,search_autos,autos_index" classname="box--border">filters</block>
+
+		<block status="inactive" position="left" classname="box--border">common_statistics</block>
+		<block status="inactive">newsline</block>
+		<block status="inactive">blogroll</block>
+		<block status="inactive">new_blog_posts</block>
+		<block status="inactive">blogs_archive</block>
+	</changeset>
+
+	<blocks>
+		<block name="teaser" 
+			   title="Teaser" 
+			   position="teaser" 
+			   header="0"
+			   collapsible="0" 
+			   sticky="0"
+			   pages="index" 
+			   status="active" 
+			   type="html">
+			<![CDATA[
+<div class="teaser">
+	<div class="container">
+		<h1>Need a car? We have a plenty of variants!</h1>
+		<h2>buy a new or used car. sell yours.</h2>
+	</div>
+</div>
+			]]>
+		</block>
+		<block name="landing" 
+			   title="Welcome to AutoSales" 
+			   position="landing" 
+			   header="1"
+			   collapsible="0" 
+			   sticky="0"
+			   pages="index" 
+			   status="active" 
+			   order="-1"
+			   type="html">
+			<![CDATA[
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste molestias fuga doloremque animi suscipit ullam dicta. Sequi culpa aperiam placeat iste, provident sed, nisi doloribus ipsum nam incidunt ullam libero.
+</p>
+<p class="m-t m-b"><a href="#" class="btn btn-primary">Sell your car</a> <i class="text-fade-50 m-l m-r">– or –</i> <a href="#" class="btn btn-default">Buy a car</a></p>
+<p class="text-fade-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi culpa aperiam placeat iste, provident sed, <a href="#">nisi doloribus ipsum</a> nam incidunt.</p>
+			]]>
+		</block>
+		<block name="benefits" 
+			   title="Benefits" 
+			   position="verybottom" 
+			   header="0"
+			   collapsible="0" 
+			   sticky="0"
+			   pages="index" 
+			   status="active" 
+			   type="html">
+			<![CDATA[
+<div class="benefits">
+	<div class="container">
+		<div class="benefits__wrp">
+			<h2>Why our portal is the best?</h2>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="f-block">
+						<span class="fa fa-lock"></span>
+						<h4>Buy safely</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi repudiandae quo nisi iusto voluptatem minus debitis consequuntur.</p>
+						<p><a href="#">Learn more</a></p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="f-block">
+						<span class="fa fa-star"></span>
+						<h4>Looking for a special offer?</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi repudiandae quo nisi iusto voluptatem minus debitis consequuntur.</p>
+						<p><a href="#">Learn more</a></p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="f-block">
+						<span class="fa fa-rocket"></span>
+						<h4>Sell faster</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi repudiandae quo nisi iusto voluptatem minus debitis consequuntur.</p>
+						<p><a href="#">Learn more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+			]]>
+		</block>
+		<block name="footer3" 
+			   title="About AutoSales" 
+			   position="footer3" 
+			   header="1"
+			   collapsible="0" 
+			   sticky="1" 
+			   status="active" 
+			   type="smarty">
+			<![CDATA[
+<p>You can change this block in admin panel. Remember, if you change template, this block will be lost. We advise you to clone this block.</p>
+<p>You can change this block in admin panel. Remember, if you change template, this block will be lost. We advise you to clone this block.</p>
+			]]>
+		</block>
+		<block name="footer4" 
+			   title="Contact us" 
+			   position="footer4" 
+			   header="1"
+			   collapsible="0" 
+			   sticky="1" 
+			   status="active" 
+			   type="smarty">
+			<![CDATA[
+<div class="b-contacts">
+	<p><span class="fa fa-map-pin"></span> 2729 Nostrand Avenue, Brooklyn, NY 11210 USA</p>
+	<p><span class="fa fa-phone"></span> Phone: 1-800- 322-933994</p>
+	<p><span class="fa fa-skype"></span> Skype: <a href="skype:autosales">autosales</a></p>
+	<p><span class="fa fa-envelope"></span> Email: <a href="mailto:info@domain.com">info@domain.com</a></p>
+</div>
+			]]>
+		</block>
+	</blocks>
+
+	<phrases>
+		<phrase category="frontend" key="website_address">22-76, 10th md, Bishkek, Kyrgyzstan</phrase>
+		<phrase category="frontend" key="website_phone">+996 (312) 56-33-71</phrase>
+		<phrase category="frontend" key="login">Log in</phrase>
+		<phrase category="frontend" key="register">Sign up</phrase>
+		<phrase category="frontend" key="login_sign_up">Login / Sign up</phrase>
+		<phrase category="frontend" key="register_tag">Register on our website and sell your car. Many features included in your private area.</phrase>
+		<phrase category="frontend" key="sell_car">Sell a car</phrase>
+		<phrase category="frontend" key="wishlist">Wishlist</phrase>
+		<phrase category="frontend" key="add_to_wishlist">Add to wishlist</phrase>
+		<phrase category="frontend" key="remove_from_wishlist">Remove from wishlist</phrase>
+		<phrase category="frontend" key="qsearch_find_a_perfect_car">Find a perfect car</phrase>
+		<phrase category="frontend" key="qsearch_popular">Popular</phrase>
+		<phrase category="frontend" key="qsearch_latest">Latest</phrase>
+		<phrase category="frontend" key="qsearch_featured">Featured</phrase>
+		<phrase category="frontend" key="qsearch_popular_makes">Popular makes</phrase>
+		<phrase category="frontend" key="qsearch_bodystyle">Bodystyle</phrase>
+		<phrase category="frontend" key="qsearch_year">By year</phrase>
+		<phrase category="frontend" key="more_makes">Show more makes</phrase>
+		<phrase category="frontend" key="less_makes">Show less makes</phrase>
+		<phrase category="frontend" key="car_details">Car details</phrase>
+		<phrase category="frontend" key="added_on">added on</phrase>
+		<phrase category="frontend" key="special_offers">Special offers</phrase>
+		<phrase category="frontend" key="total_cars_listed">Total cars listed</phrase>
+		<phrase category="frontend" key="get_listed">Get listed to sell your car</phrase>
+		<phrase category="frontend" key="list">List</phrase>
+		<phrase category="frontend" key="grid">Grid</phrase>
+
+		<phrase category="frontend" key="recently_viewed">Recently viewed</phrase>
+		<phrase category="frontend" key="saved_cars">Saved cars</phrase>
+		<phrase category="frontend" key="search_for_car">Search for a car</phrase>
+	</phrases>
+</template>

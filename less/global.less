@@ -1,0 +1,456 @@
+
+//
+// Global styles
+// --------------------------------------------------
+
+.font-normalize(@size, @margin: 0) {
+  font-size: @size;
+  line-height: @size;
+  margin: @margin;
+}
+
+body {
+  background: @body-bg;
+
+  &.-fixed-navbar {
+    padding-top: @navbar-height;
+  }
+}
+
+// improvements for cols in mobile version
+@media (max-width: @grid-float-breakpoint) {
+  .row {
+    [class*="col-md"] + [class*="col-md"] {
+      margin-top: 30px;
+    }
+  }
+}
+
+// custom controls
+
+.c-checkbox {
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+
+  input {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .fa {
+    color: @link-color;
+    font-size: 18px;
+    margin-top: -1px;
+    vertical-align: middle;
+
+    &-square {
+      color: @input-border;
+    }
+  }
+}
+
+
+
+//
+// Links
+// --------------------------------------------------
+
+// a {
+//   text-decoration: underline;
+
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     text-decoration: none;
+//   }
+// }
+
+
+
+//
+// Navs
+// --------------------------------------------------
+
+.nav-links {
+  margin: 0;
+
+  > li {
+    float: none;
+    margin-bottom: 5px;
+
+    > a {
+      padding: 0;
+      display: inline-block;
+
+      &:hover {
+        background: none;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+
+//
+// Verytop
+// --------------------------------------------------
+
+.verytop {
+  padding-bottom: @vertical-rhythm;
+
+  .title {
+    margin-top: 30px;
+  }
+
+  &--inner {
+    padding: 0;
+  }
+}
+
+
+
+//
+// Recent and Featured and
+// --------------------------------------------------
+
+.sec-landing {
+  padding: @vertical-rhythm*2 0;
+
+  .box__caption {
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 12px;
+    margin-bottom: @vertical-rhythm;
+  }
+
+  &__aside {
+    padding-right: @vertical-rhythm*1.5;
+  }
+
+  &__nav {
+    text-align: center;
+
+    .nav {
+      display: inline-block;
+      margin-bottom: @vertical-rhythm;
+
+      > li {
+        margin: 0 10px;
+
+        > a,
+        > a:focus {
+          border-radius: 20px;
+          color: @text-color;
+          border: 1px solid transparent;
+        }
+
+        &.active > a,
+        &.active > a:focus {
+          background: none;
+          color: @link-color;
+          border-color: @link-color;
+        }
+      }
+    }
+  }
+}
+
+.recent-cars,
+.featured-cars {
+  .row + .row {
+    margin-top: @vertical-rhythm;
+  }
+}
+
+// body style
+.body-list {
+
+  &__style {
+    text-align: center;
+    display: block;
+    font-size: 12px;
+    margin-bottom: @vertical-rhythm;
+
+    span {
+      display: block;
+      width: 80px;
+      height: 42px;
+      margin: 0 auto 8px;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+    }
+
+    &--convertible span {
+      background-image: url('../img/bodytypes/convertible.png');
+    }
+
+    &--sedan span {
+      background-image: url('../img/bodytypes/sedan.png');
+    }
+
+    &--off-road span {
+      background-image: url('../img/bodytypes/off-road.png');
+    }
+
+    &--pickup span {
+      background-image: url('../img/bodytypes/pickup.png');
+    }
+
+    &--truck span {
+      background-image: url('../img/bodytypes/truck.png');
+    }
+
+    &--hatchback span {
+      background-image: url('../img/bodytypes/hatchback.png');
+    }
+
+    &--sports-car-coupe span {
+      background-image: url('../img/bodytypes/sports-car-coupe.png');
+    }
+
+    &--van-minibus span {
+      background-image: url('../img/bodytypes/van-minibus.png');
+    }
+
+    &--other span {
+      background-image: url('../img/bodytypes/other.png');
+    }
+  }
+}
+
+
+
+//
+// Content
+// --------------------------------------------------
+
+.breadcrumbs {
+  background: #f0f0f0;
+  padding: 0;
+
+  .btn-xs {
+    margin-top: 5px;
+    .btn-link();
+  }
+
+  .breadcrumb {
+    background: none;
+    float: left;
+    padding: 0;
+
+    > li {
+      > a,
+      > span {
+        line-height: 40px;
+      }
+    }
+  }
+
+  .action-buttons {
+    float: right;
+
+    a {
+      line-height: 40px;
+      margin-left: 15px;
+    }
+  }
+}
+
+.title {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 26px;
+  color: #232323;
+  margin: 0 0 @vertical-rhythm*2;
+  text-align: center;
+
+  &--accent {
+    color: @link-color;
+  }
+}
+
+.page-header {
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 26px;
+  margin: 0 0 @vertical-rhythm/2;
+  color: @link-color;
+  border: none;
+}
+
+.content {
+  padding: @vertical-rhythm*2 0;
+  background: #fff;
+
+  &__header {
+    .clearfix();
+    // border-bottom: 1px solid #ddd;
+    margin-bottom: @vertical-rhythm/2;
+    padding-bottom: @vertical-rhythm/2;
+
+    h1 {
+      float: left;
+      .font-normalize(28px, 0);
+    }
+  }
+
+  &__actions {
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    > li {
+      float: left;
+
+      > a {
+        display: inline-block;
+        line-height: 28px;
+        margin-left: @vertical-rhythm/2;
+        color: fade(@text-color, 50%);
+
+        &:hover {
+          color: fade(@text-color, 70%);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__body {
+
+    + .box {
+      margin-top: @vertical-rhythm*2;
+    }
+  }
+}
+
+
+
+//
+// Benefits
+// --------------------------------------------------
+
+.sec-verybottom {
+  padding: 0;
+  background: #fff;
+}
+
+.benefits {
+  background: @brand-dark;
+  position: relative;
+  padding: @vertical-rhythm*2 0;
+
+  &__wrp {
+    position: relative;
+    z-index: 200;
+  }
+
+  &::before {
+    display: block;
+    content: '';
+    .opacity(.2);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    background: #2d2d30 url('../img/bg3.jpg') 50% bottom no-repeat;
+    background-size: cover;
+  }
+
+  h2 {
+    margin: 0 0 @vertical-rhythm;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+.f-block {
+  // text-align: center;
+  padding: 0 ;
+  
+  h4 {
+    font-weight: bold;
+  }
+
+  h4,
+  p {
+    margin-left: 50px;
+    color: #fff;
+  }
+
+  .fa {
+    font-size: 40px;
+    color: #fff;
+    float: left;
+  }
+
+  a,
+  a:focus {
+    color: #fff;
+  }
+}
+
+
+
+//
+// News
+// --------------------------------------------------
+
+.news {
+  padding: @vertical-rhythm*2 0;
+
+  &__item {
+    .clearfix();
+
+    & + & {
+      margin-top: 15px;
+    }
+
+    > a {
+      float: left;
+      margin-right: 10px;
+      width: 120px;
+    }
+
+    h5 {
+      font-size: 20px;
+    }
+
+    &--lead {
+      > a {
+        float: none;
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: auto;
+      }
+    }
+  }
+}
+
+
+
+//
+// Section blog
+// --------------------------------------------------
+
+.section-blog {
+
+  h2 {
+    text-align: center;
+    
+    + .box {
+      margin-top: 30px;
+    }
+  }
+
+  #caption_blogroll {
+    display: none;
+  }
+}

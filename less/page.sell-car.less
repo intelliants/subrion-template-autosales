@@ -1,0 +1,57 @@
+
+//
+// Sell car
+// --------------------------------------------------
+
+// lets create two cols
+
+#fieldgroup_autos_general,
+#fieldgroup_autos_exterior,
+#fieldgroup_autos_interior,
+#fieldgroup_autos_engine {
+  .fieldset__content {
+    .row();
+
+    .form-group {
+      .make-md-column(6);
+    }
+  }
+}
+
+#options_features_fieldzone {
+  .radios-list {
+    .row();
+
+    .checkbox {
+      margin: 0;
+      .make-md-column(3);
+    }
+  }
+}
+
+// make checks and radios inline
+
+#metallic_fieldzone,
+#interior_leather_fieldzone,
+#fuel_type_fieldzone {
+  .radios-list {
+    padding: 6px 0;
+  }
+  .radio {
+    margin: 0;
+    .radio-inline();
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  .checkbox {
+    margin: 0;
+    .checkbox-inline();
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
