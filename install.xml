@@ -275,7 +275,6 @@
 	<phrases>
 		<phrase category="frontend" key="website_address">22-76, 10th md, Bishkek, Kyrgyzstan</phrase>
 		<phrase category="frontend" key="website_phone">+996 (312) 56-33-71</phrase>
-		<phrase category="frontend" key="login">Log in</phrase>
 		<phrase category="frontend" key="register">Sign up</phrase>
 		<phrase category="frontend" key="login_sign_up">Login / Sign up</phrase>
 		<phrase category="frontend" key="register_tag">Register on our website and sell your car. Many features included in your private area.</phrase>
@@ -293,13 +292,11 @@
 		<phrase category="frontend" key="more_makes">Show more makes</phrase>
 		<phrase category="frontend" key="less_makes">Show less makes</phrase>
 		<phrase category="frontend" key="car_details">Car details</phrase>
-		<phrase category="frontend" key="added_on">added on</phrase>
 		<phrase category="frontend" key="special_offers">Special offers</phrase>
 		<phrase category="frontend" key="total_cars_listed">Total cars listed</phrase>
 		<phrase category="frontend" key="get_listed">Get listed to sell your car</phrase>
 		<phrase category="frontend" key="list">List</phrase>
 		<phrase category="frontend" key="grid">Grid</phrase>
-
 		<phrase category="frontend" key="recently_viewed">Recently viewed</phrase>
 		<phrase category="frontend" key="saved_cars">Saved cars</phrase>
 		<phrase category="frontend" key="search_for_car">Search for a car</phrase>
