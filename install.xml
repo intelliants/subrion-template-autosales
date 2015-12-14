@@ -39,8 +39,9 @@
 
 	<screenshots>
 		<screenshot name="1.jpg"><![CDATA[Home page]]></screenshot>
-		<screenshot name="2.jpg"><![CDATA[View car page]]></screenshot>
-		<screenshot name="3.jpg"><![CDATA[Search cars with filters]]></screenshot>
+		<screenshot name="2.jpg"><![CDATA[Home page - dark]]></screenshot>
+		<screenshot name="3.jpg"><![CDATA[View car page]]></screenshot>
+		<screenshot name="4.jpg"><![CDATA[Search cars with filters]]></screenshot>
 	</screenshots>
 
 	<configgroup name="template_autosales">Template</configgroup>
