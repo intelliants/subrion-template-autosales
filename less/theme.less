@@ -380,3 +380,17 @@
     // }
   }
 }
+
+
+
+//
+// Special colors for buttons
+// --------------------------------------------------
+
+.input-group-btn {
+  & when (@dark = true) {
+    .btn-default {
+      .btn-dark();
+    }
+  }
+}

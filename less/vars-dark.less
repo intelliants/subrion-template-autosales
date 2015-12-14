@@ -22,8 +22,10 @@
 @lines-color:      #373737;
 @text-color:       #888;
 @heading-color:    #acacac;
+@social-links-bg:  lighten(@body-bg, 5%);
+@social-links-color:  #fff;
 
-@btn-dark-bg:      #333;
+@btn-dark-bg:      lighten(#2c2e33, 3%);
 
 // rhythm
 
@@ -140,6 +142,8 @@
 
 @form-label-color: fade(@text-color, 80%);
 
+@form-actions-bg: @lines-color;
+
 
 //== Pagination
 //
@@ -185,3 +189,13 @@
 
 //** Placeholder text color
 @input-color-placeholder:        #444;
+
+
+//== Tabs
+@nav-tabs-border-color:                     @lines-color;
+
+@nav-tabs-link-hover-border-color:          @lines-color;
+
+@nav-tabs-active-link-hover-bg:             @body-bg;
+@nav-tabs-active-link-hover-color:          @text-color;
+@nav-tabs-active-link-hover-border-color:   @lines-color;

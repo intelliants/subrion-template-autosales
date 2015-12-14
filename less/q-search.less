@@ -111,7 +111,7 @@
 			appearance: none;
 			cursor: pointer;
 
-			background: url('../img/drop-default.png') 93% 50% no-repeat;
+			background: @input-bg url('../img/drop-default.png') 93% 50% no-repeat;
 
 			@media (max-width: @screen-md) {
 				background-position: 97% 50%;
@@ -132,6 +132,10 @@
 					// color: #fff;
 
 					.fa { display: inline-block; color: @link-color; }
+				}
+
+				& when (@dark = true) {
+					.btn-dark();
 				}
 			}
 		}
