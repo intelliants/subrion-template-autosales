@@ -84,7 +84,7 @@
       text-transform: uppercase;
       font-size: 18px;
       line-height: 18px;
-      border-bottom: 2px solid #ddd;
+      border-bottom: 2px solid @lines-color;
       margin: 0 0 20px;
       padding: 0 0 6px;
       font-weight: bold;
@@ -103,7 +103,7 @@
   td {
     padding: 10px 0;
     vertical-align: top;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid @lines-color;
 
     &:first-child {
       width: 30%;
@@ -150,3 +150,29 @@
 }
 
 
+
+//
+// Enquire
+// --------------------------------------------------
+
+.enquire {
+  background: @author-box-bg !important;
+
+  &__header {
+    background: @author-box-additional-bg !important;
+  }
+}
+
+.r-callback {
+  background: @body-bg !important;
+  border-color: @lines-color !important;
+}
+
+.r-callback__toggle, 
+.r-callback__toggle:focus {
+  background: @body-bg !important;
+}
+
+.r-callback__content {
+  border-color: @lines-color !important;
+}

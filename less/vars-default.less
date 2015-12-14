@@ -1,4 +1,4 @@
-
+@dark: false;
 //
 // Vars
 // 
@@ -16,8 +16,12 @@
 @link-color:       @brand-primary;
 @link-hover-color: darken(@link-color, 15%);
 @body-bg:          #fff;
+@content-bg:       @body-bg;
 @footer-bg:        #eee;
+@footer-blocks-bg: #fff;
 @lines-color:      #ddd;
+
+@btn-dark-bg:      #494c51;
 
 // rhythm
 
@@ -38,12 +42,15 @@
 // Inventory
 @inv-height:                60px;
 @inv-bg:                    #fff;
+@inv-color:                 fade(@text-color, 50%);
 @inv-border-color:          #eee;
 @inv-link-color:            #999;
 @inv-link-hover-color:      #666;
 @inv-link-active-color:     @link-color;
 
 // Basics of a navbar
+@logo-path:                        '../img/logo.png';
+@logo-path2x:                      '../img/logo@2x.png';
 @navbar-height:                    110px;
 @navbar-margin-bottom:             @line-height-computed;
 @navbar-border-radius:             0;
@@ -75,7 +82,7 @@
 @navbar-default-toggle-border-color:       #ddd;
 
 // Breadcrumb
-@breadcrumb-light-bg:                      #fff;
+@breadcrumb-light-bg:                      #f0f0f0;
 @breadcrumb-light-padding-vertical:        10px;
 @breadcrumb-light-padding-horizontal:      0;
 
@@ -89,6 +96,36 @@
 
 @box-caption-color:  @headings-color;
 @box-content-color:  @text-color;
+
+
+//
+// Cards
+// --------------------------------------------------
+
+@card-bg:                           #fff;
+@card-border-color:                 #ddd;
+@card-padding:                      10px;
+@card-title-color:                  #777;
+@card-subtitle-color:               @link-color;
+@card-text-color:                   #bbb;
+@card-actions-toggle-color:         #ccc;
+@card-actions-toggle-active-color:  @link-color;
+
+
+//
+// Items
+// --------------------------------------------------
+
+@gap:                      15px;
+@item-link-color:          @link-color;
+@item-link-color-hover:    @link-hover-color;
+@sorting-bg:               #f2f2f2;
+@author-box-bg:            #f2f2f2;
+@author-box-additional-bg: #f2f2f2;
+
+// view page
+
+
 
 
 //
@@ -121,3 +158,28 @@
 @pagination-disabled-color:            @gray-light;
 @pagination-disabled-bg:               #fff;
 @pagination-disabled-border:           #ddd;
+
+
+//
+// Search block
+// --------------------------------------------------
+
+@search-bg:         #fff;
+
+
+//== Forms
+//
+//##
+
+//** `<input>` background color
+@input-bg:                       #fff;
+//** `<input disabled>` background color
+@input-bg-disabled:              @gray-lighter;
+
+//** Text color for `<input>`s
+@input-color:                    @gray;
+//** `<input>` border color
+@input-border:                   #ccc;
+
+//** Placeholder text color
+@input-color-placeholder:        #999;

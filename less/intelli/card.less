@@ -3,15 +3,6 @@
 // Cards
 // --------------------------------------------------
 
-@card-bg:                           #fff;
-@card-border-color:                 #ddd;
-@card-padding:                      10px;
-@card-title-color:                  #777;
-@card-subtitle-color:               @link-color;
-@card-text-color:                   #bbb;
-@card-actions-toggle-color:         #ccc;
-@card-actions-toggle-active-color:  @link-color;
-
 .ia-card {
 	background: @card-bg;
 	position: relative;
@@ -414,7 +405,7 @@
 	&__actions {
 		.clearfix();
 		margin-bottom: 15px;
-		background: #f2f2f2;
+		background: @sorting-bg;
 		padding: 10px 15px;
 	}
 
@@ -423,6 +414,12 @@
 
 		@media (max-width: @screen-xs) {
 			float: none;
+		}
+
+		& when (@dark = true) {
+			.btn-default {
+				.btn-dark();
+			}
 		}
 	}
 
@@ -462,6 +459,12 @@
 		@media (max-width: @screen-xs) {
 			float: none;
 			margin-top: 10px;
+		}
+
+		& when (@dark = true) {
+			.btn-default {
+				.btn-dark();
+			}
 		}
 	}
 

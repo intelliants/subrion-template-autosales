@@ -10,7 +10,8 @@
 .btn-info,
 .btn-warning,
 .btn-danger,
-.btn-white {
+.btn-white,
+.btn-dark {
 
   // Reset the shadow
   &:active,
@@ -95,6 +96,11 @@
 .btn-info    { .btn-styles(@btn-info-bg); }
 .btn-warning { .btn-styles(@btn-warning-bg); }
 .btn-danger  { .btn-styles(@btn-danger-bg); }
+.btn-dark    { 
+  .btn-styles(@btn-dark-bg);
+  text-shadow: none;
+  color: #999;
+}
 .btn-white   { 
   .btn-styles(#f0f0f0);
   color: #555;
@@ -328,15 +334,15 @@
       position: absolute;
       left: 0;
       right: 0;
-      top: 50%;
-      margin: -30px 0 0;
+      top: 75px;
+      margin: 0;
 
       [class*='owl-'] {
         margin: 0;
         padding: 0;
         font-size: 60px;
         line-height: 60px;
-        display: inline-block;
+        display: inline-block; 
         border-radius: 0;
         background: none;
         color: #ddd;

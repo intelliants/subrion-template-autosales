@@ -1,6 +1,6 @@
 <div class="sec sec-search{if 'index' != $core.page.name} sec-search--inner{/if}">
 	<div class="container">
-		<div class="q-search{if 'index' != $core.page.name} q-search--inner{/if}">
+		<form class="q-search{if 'index' != $core.page.name} q-search--inner{/if}" action="{$smarty.const.IA_URL}search/cars/">
 			<div class="row">
 				<div class="col-md-6">
 					<h4>{lang key='qsearch_find_a_perfect_car'}</h4>
@@ -81,7 +81,7 @@
 					{ia_blocks block='popular_makes'}
 				</div>
 			</div>
-		</div>
+		</form>
 	</div>
 </div>
 {ia_print_js files='_IA_URL_packages/autos/js/front/search'}

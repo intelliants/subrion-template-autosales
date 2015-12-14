@@ -65,7 +65,7 @@
 
 	<config group="template_autosales" 
 		    name="template_color_scheme" 
-		    type="hidden" 
+		    type="select" 
 		    multiplevalues="default,dark" 
 		    description="Template color"
 		    order="3004">default</config>
