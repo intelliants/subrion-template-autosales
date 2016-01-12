@@ -166,7 +166,7 @@
 					{$itemFeatures = explode(',', $item.options_features)}
 
 					{foreach array_keys($features) as $opt}
-						<div class="v-item-features__item {if in_array($opt, $itemFeatures)} active{/if}">{if in_array($opt, $itemFeatures)}<span class="fa fa-check-square"></span> {/if}{lang key="field_options_features_{$opt}"}</div>
+						<div class="v-item-features__item {if in_array($opt, $itemFeatures)} active{/if}"><span class="fa fa-check-square"></span> {lang key="field_options_features_{$opt}"}</div>
 					{/foreach}
 				</div>
 			</div>

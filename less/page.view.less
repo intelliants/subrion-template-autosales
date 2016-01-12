@@ -141,10 +141,15 @@
       position: absolute;
       left: 0;
       top: 3px;
+      color: fade(@text-color, 15%);
     }
 
     &.active {
       color: @text-color;
+
+      .fa {
+        color: @text-color;
+      }
     }
   }
 }
