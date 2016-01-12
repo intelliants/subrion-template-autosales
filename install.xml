@@ -301,5 +301,7 @@
 		<phrase category="frontend" key="recently_viewed">Recently viewed</phrase>
 		<phrase category="frontend" key="saved_cars">Saved cars</phrase>
 		<phrase category="frontend" key="search_for_car">Search for a car</phrase>
+		<phrase category="frontend" key="tab_featured_cars">Featured cars</phrase>
+		<phrase category="frontend" key="tab_new_cars">Newly added cars</phrase>
 	</phrases>
 </template>

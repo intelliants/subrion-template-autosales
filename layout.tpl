@@ -154,15 +154,15 @@
 							<div class="col-md-8">
 								<div class="sec-landing__nav">
 									<ul class="nav nav-pills">
-										<li class="active"><a href="#tab-featured" data-toggle="tab">Featured cars</a></li>
-										<li><a href="#tab-recent" data-toggle="tab">Newly added</a></li>
+										<li class="active"><a href="#tab-featured" data-toggle="tab">{lang key='tab_featured_cars'}</a></li>
+										<li{if !isset($car_blocks_data.featured)} class="active"{/if}><a href="#tab-recent" data-toggle="tab">{lang key='tab_new_cars'}</a></li>
 									</ul>
 								</div>
 								<div class="tab-content">
 									<div class="tab-pane active" id="tab-featured">
 										{ia_blocks block='featured'}
 									</div>
-									<div class="tab-pane" id="tab-recent">
+									<div class="tab-pane{if !isset($car_blocks_data.featured)} active{/if}" id="tab-recent">
 										{ia_blocks block='recent'}
 									</div>
 								</div>
