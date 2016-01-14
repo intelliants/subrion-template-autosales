@@ -22,6 +22,11 @@
       font-weight: bold;
       color: @brand-dark;
     }
+
+    > img {
+      margin-top: -6px;
+      width: 30px;
+    }
   }
 
   &__price {
@@ -47,12 +52,10 @@
 
   .content__actions {
     font-size: 18px;
-    margin-top: 15px;
   }
 
   &__social {
-    float: left;
-    margin-top: 15px;
+    margin-top: 35px;
   }
 }
 
@@ -78,7 +81,10 @@
 .v-item-info {
 
   &__section {
-    margin-top: 30px;
+
+    & + & {
+      margin-top: 30px;
+    }
 
     > h3 {
       text-transform: uppercase;
