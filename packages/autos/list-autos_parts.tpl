@@ -16,6 +16,10 @@
 	</div>
 
 	<div class="ia-item__content">
+		<div class="ia-item__actions">
+			{printFavorites item=$listing itemtype='autos_parts' guests=true tpl='no-text'}
+			{accountActions item=$listing itemtype='autos_parts'}
+		</div>
 
 		<div class="ia-item__title">
 			{ia_url item='autos_parts' type='link' data=$listing text="{$listing.title}"}
@@ -30,10 +34,6 @@
 
 		<p>{$listing.description|escape|truncate:150:'...':true}</p>
 
-		<div class="ia-item__actions">
-			{printFavorites item=$listing itemtype='autos_parts' guests=true}
-			{accountActions item=$listing itemtype='autos_parts'}
-			<a href="{ia_url item='autos_parts' data=$listing type='url'}">{lang key='details'} <span class="fa fa-angle-double-right"></span></a>
-		</div>
+		<a class="btn btn-success btn-block" href="{ia_url item='autos_parts' data=$listing type='url'}">{lang key='view'}</a>
 	</div>
 </div>
