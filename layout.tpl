@@ -111,7 +111,7 @@
 
 									{ia_blocks block='top'}
 
-									{if 'autos_view' != $core.page.name && 'autos_service_view' != $core.page.name}
+									{if 'autos_view' != $core.page.name && 'autos_service_view' != $core.page.name && 'autos_part_view' != $core.page.name}
 										<div class="content__header">
 											<h1 class="page-header">{$core.page.title}</h1>
 											<ul class="content__actions">

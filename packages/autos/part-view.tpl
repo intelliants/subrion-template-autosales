@@ -14,10 +14,6 @@
 			{/foreach}
 		</ul>
 		<h2>
-			{if $item.logo}
-				{$logo = unserialize($item.logo)}
-				{printImage imgfile=$logo.path title="{$item.title}" class='img-circle' width=30}
-			{/if}
 			<span>{$item.title}</span>
 		</h2>
 	</div>
@@ -28,6 +24,10 @@
 		<table class="v-item-table">
 			<tbody>
 				<tr>
+					<td>{lang key='field_price'}</td>
+					<td><b class="text-success">{$core.config.currency}{$item.price}</b></td>
+				</tr>
+				<tr>
 					<td>{lang key='field_categories'}</td>
 					<td>
 						{$services = explode(',', $item.categories)}
@@ -37,10 +37,21 @@
 						{/foreach}
 					</td>
 				</tr>
+			</tbody>
+		</table>
+
+		<table class="v-item-table m-t">
+			<tbody>
 				<tr>
-					<td>{lang key='field_company_address'}</td>
-					<td>{$item.company_address}</td>
+					<td>{lang key='field_company_title'}</td>
+					<td>{$item.company_title}</td>
 				</tr>
+				{if $item.company_address}
+					<tr>
+						<td>{lang key='field_company_address'}</td>
+						<td>{$item.company_address}</td>
+					</tr>
+				{/if}
 				<tr>
 					<td>{lang key='field_company_phone'}</td>
 					<td>{$item.company_phone}</td>
@@ -60,37 +71,12 @@
 			</tbody>
 		</table>
 
-		<div class="v-item-info">
-			<div id="gm-map" class="m-t" style="height: 300px;width: 100%;"></div>
-			<script type="text/javascript">
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('gm-map'), {
-    zoom: 14,
-    center: { lat: -34.397, lng: 150.644 }
-  });
-  var geocoder = new google.maps.Geocoder();
-
-  geocodeAddress(geocoder, map);
-}
-
-function geocodeAddress(geocoder, resultsMap) {
-  var address = '{$item.company_address}';
-  geocoder.geocode({ 'address': address }, function(results, status) {
-    if (status === google.maps.GeocoderStatus.OK) {
-      resultsMap.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-        map: resultsMap,
-        position: results[0].geometry.location
-      });
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-}
-			</script>
-			<script async defer
-			        src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
-		</div>
+		{if $item.company_details}
+			<div class="v-item-info m-t">
+				<p><b>{lang key='field_company_details'}</b></p>
+				{$item.company_details}
+			</div>
+		{/if}
 	</div>
 
 	<div class="col-md-8">
@@ -98,7 +84,7 @@ function geocodeAddress(geocoder, resultsMap) {
 			{ia_add_media files='fotorama'}
 			{$pics=unserialize($item.pictures)}
 
-			<div class="ia-item-view__gallery">
+			<div class="v-item__gallery">
 				<div class="fotorama" 
 					 data-nav="thumbs"
 					 data-width="100%"
@@ -106,7 +92,7 @@ function geocodeAddress(geocoder, resultsMap) {
 					 data-allowfullscreen="true"
 					 data-fit="cover">
 					{foreach $pics as $entry}
-						<a class="ia-item-view__gallery__item" href="{printImage imgfile=$entry.path url=true fullimage=true}">{printImage imgfile=$entry.path title=$entry.title}</a>
+						<a class="v-item__gallery__item" href="{printImage imgfile=$entry.path url=true fullimage=true}">{printImage imgfile=$entry.path title=$entry.title}</a>
 					{/foreach}
 				</div>
 			</div>
@@ -122,7 +108,7 @@ function geocodeAddress(geocoder, resultsMap) {
 		<div class="m-t-lg">
 			{ia_hooker name='smartyItemViewBeforeTabs'}
 
-			{include file='item-view-tabs.tpl' isView=true exceptions=['logo', 'pictures', 'title', 'categories', 'description', 'company_address', 'company_phone', 'company_website', 'company_skype'] class='ia-item-view-tabs'}
+			{include file='item-view-tabs.tpl' isView=true exceptions=['pictures', 'title', 'price', 'categories', 'description', 'company_title', 'company_address', 'company_phone', 'company_website', 'company_skype', 'company_details'] class='ia-item-view-tabs'}
 
 			{ia_hooker name='smartyViewListingBeforeFooter'}
 		</div>
