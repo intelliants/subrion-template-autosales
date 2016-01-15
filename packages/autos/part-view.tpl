@@ -90,7 +90,7 @@
 					 data-width="100%"
 					 data-ratio="800/400"
 					 data-allowfullscreen="true"
-					 data-fit="cover">
+					 data-fit="{$core.config.template_fotorama_part}">
 					{foreach $pics as $entry}
 						<a class="v-item__gallery__item" href="{printImage imgfile=$entry.path url=true fullimage=true}">{printImage imgfile=$entry.path title=$entry.title}</a>
 					{/foreach}

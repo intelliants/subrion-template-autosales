@@ -92,6 +92,27 @@
 		    description="Show Tools in floating box">1</config>
 
 	<config group="template_autosales" 
+		    name="template_fotorama_car" 
+		    type="select" 
+		    multiplevalues="contain,cover,scaledown,none" 
+		    description="Fotorama fit method for cars"
+		    order="3008">cover</config>
+
+	<config group="template_autosales" 
+		    name="template_fotorama_service" 
+		    type="select" 
+		    multiplevalues="contain,cover,scaledown,none" 
+		    description="Fotorama fit method for services"
+		    order="3009">cover</config>
+
+	<config group="template_autosales" 
+		    name="template_fotorama_part" 
+		    type="select" 
+		    multiplevalues="contain,cover,scaledown,none" 
+		    description="Fotorama fit method for parts"
+		    order="3010">contain</config>
+
+	<config group="template_autosales" 
 		    name="autosales_divider2" 
 		    type="divider" 
 		    order="3030">Social links</config>
