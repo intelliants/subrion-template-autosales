@@ -329,56 +329,54 @@
   margin-bottom: @vertical-rhythm;
 
   // redefine default
-  .owl-controls {
-    .owl-nav {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 75px;
+  .owl-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 75px;
+    margin: 0;
+
+    [class*='owl-'] {
       margin: 0;
+      padding: 0;
+      font-size: 60px;
+      line-height: 60px;
+      display: inline-block; 
+      border-radius: 0;
+      background: none;
+      color: #ddd;
+      position: absolute;
+      left: -40px;
 
-      [class*='owl-'] {
-        margin: 0;
-        padding: 0;
-        font-size: 60px;
-        line-height: 60px;
-        display: inline-block; 
-        border-radius: 0;
+      &:hover {
         background: none;
-        color: #ddd;
-        position: absolute;
-        left: -40px;
-
-        &:hover {
-          background: none;
-          color: @link-color;
-        }
-
-        &:last-child {
-          left: auto;
-          right: -40px;
-        }
+        color: @link-color;
       }
 
-      @media (max-width: @screen-xs) {
-        // right: auto;
-        // left: 50%;
-        // top: auto;
-        // bottom: -46px;
-        // margin-left: -38px;
-
-        // [class*='owl-']:first-child {
-        //   margin-left: 0;
-        // }
+      &:last-child {
+        left: auto;
+        right: -40px;
       }
     }
+
+    @media (max-width: @screen-xs) {
+      // right: auto;
+      // left: 50%;
+      // top: auto;
+      // bottom: -46px;
+      // margin-left: -38px;
+
+      // [class*='owl-']:first-child {
+      //   margin-left: 0;
+      // }
+    }
+  }
 
     // .owl-dots {
     //   position: absolute;
     //   top: -56px;
     //   right: 100px;
     // }
-  }
 }
 
 

@@ -15,7 +15,7 @@
 
 	{ia_add_js}
 $(function() {
-	$('.js-carousel-makes').owlCarousel({
+	var owlOptions = {
 		items: 4,
 		margin: 0,
 		dots: false,
@@ -39,7 +39,9 @@ $(function() {
 				items: 4
 			}
 		}
-	});
+	}
+
+	$('.js-carousel-makes').owlCarousel(owlOptions);
 });
 	{/ia_add_js}
 {/if}
