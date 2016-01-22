@@ -18,7 +18,9 @@
 		</h2>
 		<div class="v-item__header__price">{$core.config.currency} {$item.price}</div>
 		<div class="v-item__header__info">
-			<span class="v-item__header__info__item pull-right">#{$item.part_number}</span>
+			{if isset($item.part_number) && $item.part_number}
+				<span class="v-item__header__info__item pull-right">#{$item.part_number}</span>
+			{/if}
 			{if $item.sponsored}<span class="v-item__header__info__item label label-warning">{lang key='sponsored'}</span>{/if}
 			{if $item.featured}<span class="v-item__header__info__item label label-info">{lang key='featured'}</span>{/if}
 			<span class="v-item__header__info__item">
