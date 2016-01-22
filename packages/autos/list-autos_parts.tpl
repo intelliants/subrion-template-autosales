@@ -25,15 +25,11 @@
 			{ia_url item='autos_parts' type='link' data=$listing text="{$listing.title}"}
 		</div>
 
-		<div class="ia-item__additional">
-			<p class="text-success">{$core.config.currency} {$listing.price}</p>
-			{if isset($listing.company_phone) && $listing.company_phone}
-				<p><span class="fa fa-phone"></span> {$listing.company_phone}</p>
-			{/if}
-		</div>
-
 		<p>{$listing.description|escape|truncate:150:'...':true}</p>
 
-		<a class="btn btn-success btn-block" href="{ia_url item='autos_parts' data=$listing type='url'}">{lang key='view'}</a>
+		<div class="ia-item__price">
+			<p>{$core.config.currency} {$listing.price}</p>
+			<a class="btn btn-success" href="{ia_url item='autos_parts' data=$listing type='url'}">{lang key='view'}</a>
+		</div>
 	</div>
 </div>
