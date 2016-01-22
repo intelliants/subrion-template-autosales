@@ -18,6 +18,7 @@
 		</h2>
 		<div class="v-item__header__price">{$core.config.currency} {$item.price}</div>
 		<div class="v-item__header__info">
+			<span class="v-item__header__info__item pull-right">#{$item.part_number}123412341234</span>
 			{if $item.sponsored}<span class="v-item__header__info__item label label-warning">{lang key='sponsored'}</span>{/if}
 			{if $item.featured}<span class="v-item__header__info__item label label-info">{lang key='featured'}</span>{/if}
 			<span class="v-item__header__info__item">
@@ -60,7 +61,7 @@
 <div class="m-t-lg">
 	{ia_hooker name='smartyItemViewBeforeTabs'}
 
-	{include file='item-view-tabs.tpl' isView=true exceptions=['pictures', 'title', 'price', 'categories', 'description', 'company_title', 'company_address', 'company_phone', 'company_website', 'company_skype', 'company_details'] class='ia-item-view-tabs'}
+	{include file='item-view-tabs.tpl' isView=true exceptions=['pictures', 'title', 'price', 'categories', 'description'] class='ia-item-view-tabs'}
 
 	{ia_hooker name='smartyViewListingBeforeFooter'}
 </div>

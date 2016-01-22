@@ -1,6 +1,7 @@
 <div class="v-item">
 	<div class="v-item__header">
 		<ul class="content__actions">
+			<li class="text-fade-50 small"><a href="{ia_url type='url' item='members' data=$author}"><span class="fa fa-user"></span> {lang key='by'} {$author.fullname|default:$author.username}</a></li>
 			{foreach $core.actions as $name => $action}
 				<li>
 					{if 'action-favorites' == $name}
