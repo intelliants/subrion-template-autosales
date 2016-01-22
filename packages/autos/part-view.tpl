@@ -30,10 +30,10 @@
 				<tr>
 					<td>{lang key='field_categories'}</td>
 					<td>
-						{$services = explode(',', $item.categories)}
+						{$cats = explode(',', $item.categories)}
 
-						{foreach $services as $service}
-							{lang key="field_autos_services_categories_{$service}"}{if !$service@last}, {/if}
+						{foreach $cats as $cat}
+							{lang key="field_autos_parts_categories_{$cat}"}{if !$cat@last}, {/if}
 						{/foreach}
 					</td>
 				</tr>
