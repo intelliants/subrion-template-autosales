@@ -83,14 +83,6 @@
 		{/if}
 	</div>
 {elseif !isset($category.id)}
-	<div class="ia-cards">
-		<div class="ia-cards__actions">
-			{if 'autos_index_member' == $core.page.name}
-				{include file='extra:autos/listing-filters'}
-			{/if}
-		</div>
-	</div>
-	
 	<div class="alert alert-info">
 		{lang key='no_listings_to_show'}
 	</div>
