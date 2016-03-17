@@ -4,8 +4,8 @@
 	<summary>Template for Subrion Autos Script</summary>
 	<author>Gleb Surinov</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>1.1.1</version>
-	<date>2016-01-15</date>
+	<version>1.1.2</version>
+	<date>2016-03-16</date>
 	<compatibility>4.0</compatibility>
 
 	<dependency type="package" exist="1">autos</dependency>
@@ -46,111 +46,111 @@
 
 	<configgroup name="template_autosales">Template</configgroup>
 
-	<config group="template_autosales" 
-		    name="autosales_divider1" 
-		    type="divider" 
+	<config group="template_autosales"
+		    name="autosales_divider1"
+		    type="divider"
 		    order="3000">General</config>
 
-	<config group="template_autosales" 
-		    name="max_top_menu_items" 
-		    type="text" 
+	<config group="template_autosales"
+		    name="max_top_menu_items"
+		    type="text"
 		    description="Max number of items in Main Menu"
 		    order="3002">7</config>
 
 	<config group="template_autosales"
-		    name="fixed_navbar" 
+		    name="fixed_navbar"
 		    type="hidden"
-		    order="3003" 
-		    values="1,0" 
+		    order="3003"
+		    values="1,0"
 		    description="Fixed navbar">1</config>
 
-	<config group="template_autosales" 
-		    name="template_color_scheme" 
-		    type="select" 
-		    multiplevalues="default,dark" 
+	<config group="template_autosales"
+		    name="template_color_scheme"
+		    type="select"
+		    multiplevalues="default,dark"
 		    description="Template color"
 		    order="3004">default</config>
 
-	<config group="template_autosales" 
-		    name="template_layout" 
-		    type="hidden" 
-		    multiplevalues="wide,boxed" 
+	<config group="template_autosales"
+		    name="template_layout"
+		    type="hidden"
+		    multiplevalues="wide,boxed"
 		    description="Template layout"
 		    order="3005">wide</config>
 
-	<config group="template_autosales" 
-		    name="website_bg" 
-		    type="image" 
+	<config group="template_autosales"
+		    name="website_bg"
+		    type="image"
 		    description="Header background"
 		    order="3006"><![CDATA[]]></config>
 
 	<config group="template_autosales"
-		    name="tools_as_floating_box" 
+		    name="tools_as_floating_box"
 		    type="radio"
-		    order="3007" 
-		    values="1,0" 
+		    order="3007"
+		    values="1,0"
 		    description="Show Tools in floating box">1</config>
 
-	<config group="template_autosales" 
-		    name="template_fotorama_car" 
-		    type="select" 
-		    multiplevalues="contain,cover,scaledown,none" 
+	<config group="template_autosales"
+		    name="template_fotorama_car"
+		    type="select"
+		    multiplevalues="contain,cover,scaledown,none"
 		    description="Fotorama fit method for cars"
 		    order="3008">cover</config>
 
-	<config group="template_autosales" 
-		    name="template_fotorama_service" 
-		    type="select" 
-		    multiplevalues="contain,cover,scaledown,none" 
+	<config group="template_autosales"
+		    name="template_fotorama_service"
+		    type="select"
+		    multiplevalues="contain,cover,scaledown,none"
 		    description="Fotorama fit method for services"
 		    order="3009">cover</config>
 
-	<config group="template_autosales" 
-		    name="template_fotorama_part" 
-		    type="select" 
-		    multiplevalues="contain,cover,scaledown,none" 
+	<config group="template_autosales"
+		    name="template_fotorama_part"
+		    type="select"
+		    multiplevalues="contain,cover,scaledown,none"
 		    description="Fotorama fit method for parts"
 		    order="3010">contain</config>
 
-	<config group="template_autosales" 
-		    name="autosales_divider2" 
-		    type="divider" 
+	<config group="template_autosales"
+		    name="autosales_divider2"
+		    type="divider"
 		    order="3030">Social links</config>
-	
+
 	<config group="template_autosales"
 			name="template_social"
-		    type="radio" 
+		    type="radio"
 		    order="3031"
-		    values="1,0" 
+		    values="1,0"
 		    description="Show links">1</config>
 	<config group="template_autosales"
 			name="template_social_t"
 		    type="text"
 		    order="3032"
-		    show="template_social|1" 
+		    show="template_social|1"
 		    description="Twitter Link">https://twitter.com/IntelliantsLLC</config>
 	<config group="template_autosales"
 			name="template_social_f"
-		    type="text" 
-		    order="3033" 
-		    show="template_social|1" 
+		    type="text"
+		    order="3033"
+		    show="template_social|1"
 		    description="Facebook Link">https://www.facebook.com/Intelliants</config>
 	<config group="template_autosales"
 			name="template_social_g"
-		    type="text" 
-		    order="3034" 
-		    show="template_social|1" 
+		    type="text"
+		    order="3034"
+		    show="template_social|1"
 		    description="Google+ Link">https://plus.google.com/102500660503219569194/posts</config>
 	<config group="template_autosales"
 			name="template_social_y"
-		    type="text" 
-		    order="3035" 
-		    show="template_social|1" 
+		    type="text"
+		    order="3035"
+		    show="template_social|1"
 		    description="You Tube Link">#</config>
 
-	<config group="template_autosales" 
-		    name="ckeditor_css" 
-		    type="hidden" 
+	<config group="template_autosales"
+		    name="ckeditor_css"
+		    type="hidden"
 		    description="CKEditor CSS"
 		    order="3099">ckeditor.css</config>
 
@@ -182,14 +182,14 @@
 	</changeset>
 
 	<blocks>
-		<block name="teaser" 
-			   title="Teaser" 
-			   position="teaser" 
+		<block name="teaser"
+			   title="Teaser"
+			   position="teaser"
 			   header="0"
-			   collapsible="0" 
+			   collapsible="0"
 			   sticky="0"
-			   pages="index" 
-			   status="active" 
+			   pages="index"
+			   status="active"
 			   type="html">
 			<![CDATA[
 <div class="teaser">
@@ -200,14 +200,14 @@
 </div>
 			]]>
 		</block>
-		<block name="landing" 
-			   title="Welcome to AutoSales" 
-			   position="landing" 
+		<block name="landing"
+			   title="Welcome to AutoSales"
+			   position="landing"
 			   header="1"
-			   collapsible="0" 
+			   collapsible="0"
 			   sticky="0"
-			   pages="index" 
-			   status="active" 
+			   pages="index"
+			   status="active"
 			   order="-1"
 			   type="html">
 			<![CDATA[
@@ -217,14 +217,14 @@
 <p class="text-fade-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi culpa aperiam placeat iste, provident sed, <a href="#">nisi doloribus ipsum</a> nam incidunt.</p>
 			]]>
 		</block>
-		<block name="benefits" 
-			   title="Benefits" 
-			   position="verybottom" 
+		<block name="benefits"
+			   title="Benefits"
+			   position="verybottom"
 			   header="0"
-			   collapsible="0" 
+			   collapsible="0"
 			   sticky="0"
-			   pages="index" 
-			   status="active" 
+			   pages="index"
+			   status="active"
 			   type="html">
 			<![CDATA[
 <div class="benefits">
@@ -262,26 +262,26 @@
 </div>
 			]]>
 		</block>
-		<block name="footer3" 
-			   title="About AutoSales" 
-			   position="footer3" 
+		<block name="footer3"
+			   title="About AutoSales"
+			   position="footer3"
 			   header="1"
-			   collapsible="0" 
-			   sticky="1" 
-			   status="active" 
+			   collapsible="0"
+			   sticky="1"
+			   status="active"
 			   type="smarty">
 			<![CDATA[
 <p>You can change this block in admin panel. Remember, if you change template, this block will be lost. We advise you to clone this block.</p>
 <p>You can change this block in admin panel. Remember, if you change template, this block will be lost. We advise you to clone this block.</p>
 			]]>
 		</block>
-		<block name="footer4" 
-			   title="Contact us" 
-			   position="footer4" 
+		<block name="footer4"
+			   title="Contact us"
+			   position="footer4"
 			   header="1"
-			   collapsible="0" 
-			   sticky="1" 
-			   status="active" 
+			   collapsible="0"
+			   sticky="1"
+			   status="active"
 			   type="smarty">
 			<![CDATA[
 <div class="b-contacts">

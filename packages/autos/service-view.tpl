@@ -1,7 +1,9 @@
 <div class="v-item">
 	<div class="v-item__header">
 		<ul class="content__actions">
-			<li class="text-fade-50 small"><a href="{ia_url type='url' item='members' data=$author}"><span class="fa fa-user"></span> {lang key='by'} {$author.fullname|default:$author.username}</a></li>
+			{if isset($author) && $author}
+				<li class="text-fade-50 small"><a href="{ia_url type='url' item='members' data=$author}"><span class="fa fa-user"></span> {lang key='by'} {$author.fullname|default:$author.username}</a></li>
+			{/if}
 			{foreach $core.actions as $name => $action}
 				<li>
 					{if 'action-favorites' == $name}
@@ -100,7 +102,7 @@ function geocodeAddress(geocoder, resultsMap) {
 			{$pics=unserialize($item.pictures)}
 
 			<div class="ia-item-view__gallery">
-				<div class="fotorama" 
+				<div class="fotorama"
 					 data-nav="thumbs"
 					 data-width="100%"
 					 data-ratio="800/400"
