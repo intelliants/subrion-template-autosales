@@ -4,7 +4,7 @@
 // --------------------------------------------------
 
 .ia-form {
-  
+
   &--bordered {
     border: 1px solid @nav-tabs-border-color;
     padding: @fieldest-padding-vertical @fieldest-padding-horizontal;
@@ -34,7 +34,7 @@
       [class^="col-md"] {
         padding-left: 5px;
         padding-right: 5px;
-      } 
+      }
     }
   }
 }
@@ -90,7 +90,7 @@
   + .field {
     margin-top: @vertical-rhythm /2;
   }
-  
+
   &__header {
     color: @form-label-color;
     max-width: 100%;
@@ -127,7 +127,42 @@
   .tab-pane .fieldset:first-of-type .fieldset__header {
     padding-top: 0;
   }
+
+  // submit and captcha right after tabs
+
+  // &.has-additional-actions {
+  //     .tab-content {
+  //         border-bottom: 0;
+  //     }
+  // }
+
+  &__after-tabs {
+      border: 1px solid @nav-tabs-border-color;
+      border-top-color: #fff;
+      & when (@dark = true) {
+          border-top-color: #2c2e33;
+      }
+      margin-top: -16px;
+
+      .fieldset__header,
+      .fieldset__content,
+      .fieldset__actions {
+          margin-left: 0;
+          margin-right: 0;
+      }
+
+      .fieldset__actions {
+          margin-bottom: 0;
+      }
+
+      .fieldset__content {
+          padding-left: @fieldest-padding-vertical;
+          padding-right: @fieldest-padding-vertical;
+      }
+  }
 }
+
+
 
 
 //
@@ -244,7 +279,7 @@
 
     .select2-container {
       display: block;
-      width: 100% !important; 
+      width: 100% !important;
     }
   }
 }
