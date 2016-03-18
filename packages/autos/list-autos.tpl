@@ -46,7 +46,7 @@
 		</div>
 		
 		<a class="ia-card__title" href="{$listing.link}">{$listing.model}, {$listing.release_year}</a>
-		<p class="ia-card__sub-title">{$listing.price}</p>
+		<p class="ia-card__sub-title">{$listing.price_formatted}</p>
 		<div class="ia-car-info">
 			<a class="ia-car-info__icon ia-car-info__icon--body" href="{$listing.link}">{lang key="field_body_type_{$listing.body_type}"}</a>
 			{if $listing.engine}

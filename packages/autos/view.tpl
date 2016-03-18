@@ -40,7 +40,7 @@
 				</ul>
 
 				<h2><span>{$item.model}, {$item.release_year}</span></h2>
-				<div class="v-item__header__price">{$item.price}</div>
+				<div class="v-item__header__price">{$item.price_formatted}</div>
 				<div class="v-item-header__info">
 					{if $item.sponsored}<span class="v-item__header__info__item label label-warning">{lang key='sponsored'}</span>{/if}
 					{if $item.featured}<span class="v-item__header__info__item label label-info">{lang key='featured'}</span>{/if}

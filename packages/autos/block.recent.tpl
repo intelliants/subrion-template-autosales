@@ -11,7 +11,7 @@
 
 				<div class="ia-card__content">
 					<a class="ia-card__title" href="{$item.link}">{$item.model}, {$item.release_year}</a>
-					<p class="ia-card__sub-title">{$item.price}</p>
+					<p class="ia-card__sub-title">{$item.price_formatted}</p>
 					{if $item.mileage}
 						<p class="ia-card__text">
 							<span class="fa fa-tachometer"></span> <b>{$item.mileage}</b>
