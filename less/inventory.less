@@ -4,79 +4,83 @@
 // --------------------------------------------------
 
 .inv {
-	// height: @inv-height;
-	background: @inv-bg;
-	.clearfix();
-	// display: none;
-	border-bottom: 1px solid @inv-border-color;
+  // height: @inv-height;
+  background: @inv-bg;
+  .clearfix();
+  // display: none;
+  border-bottom: 1px solid @inv-border-color;
 
-	&__info {
-		float: left;
+  &__info {
+    float: left;
 
-		> span {
-			font-size: 12px;
-			float: left;
-			color: @inv-color;
-			line-height: @inv-height;
-			padding: 0 15px 0;
-			border-left: 1px solid @inv-border-color;
+    > span {
+      font-size: 12px;
+      float: left;
+      color: @inv-color;
+      line-height: @inv-height;
+      padding: 0 15px 0;
+      border-left: 1px solid @inv-border-color;
 
-			&:last-child {
-				padding-right: 0;
-			}
+      &:last-child {
+        padding-right: 0;
+      }
 
-			> span {
-				margin-right: 5px;
-			}
-		}
+      > span {
+        margin-right: 5px;
+      }
+    }
 
-		@media (max-width: @screen-md) {
-			display: none;
-		}
-	}
+    @media (max-width: @screen-md) {
+      display: none;
+    }
+  }
 
-	&__nav {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		float: right;
+  &__nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
 
-		> li {
-			float: left;
-			margin: 0;
+    > li {
+      float: left;
+      margin: 0;
 
-			> a {
+      > a {
 
-				&,
-				&:focus,
-				&:active {
-					display: block;
-					padding: 0 15px;
-					font-size: 12px;
-					line-height: @inv-height;
-					margin: 0;
-					border-right: 1px solid @inv-border-color;
-					color: @inv-link-color;
+        &,
+        &:focus,
+        &:active {
+          display: block;
+          padding: 0 15px;
+          font-size: 12px;
+          line-height: @inv-height;
+          margin: 0;
+          border-right: 1px solid @inv-border-color;
+          color: @inv-link-color;
 
-					@media (max-width: @screen-sm) {
-						border: 0;
-						padding: 0 8px;
-					}
-				}
-			}
-		}
+          @media (max-width: @screen-sm) {
+            border: 0;
+            padding: 0 8px;
+          }
+        }
+      }
+    }
 
-		&--langs {
-			@media (max-width: @screen-sm) {
-				float: left;
+    &--langs {
+      @media (max-width: @screen-sm) {
+        float: left;
 
-				> li {
+        .dropdown-menu {
+          right: auto;
+          min-width: 120px;
 
-					> a {
-						padding: 0;
-					}
-				}
-			}
-		}
-	}
+          &::before {
+            left: 0;
+            right: auto;
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
 }
