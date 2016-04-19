@@ -324,5 +324,7 @@
 		<phrase category="frontend" key="search_for_car">Search for a car</phrase>
 		<phrase category="frontend" key="tab_featured_cars">Featured cars</phrase>
 		<phrase category="frontend" key="tab_new_cars">Newly added cars</phrase>
+		<phrase category="frontend" key="as_price_min">Price min</phrase>
+		<phrase category="frontend" key="as_price_max">Price max</phrase>
 	</phrases>
 </template>
