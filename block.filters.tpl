@@ -78,6 +78,26 @@ $(function()
 			$('#range_{$field.name}_to').val(obj.to).trigger('change');
 		}
 	});
+
+	var ionSlider_{$field.name} = $('#range_{$field.name}').data('ionRangeSlider');
+
+	$('#range_{$field.name}_from').on('change', function() {
+		var thisval = $(this).val();
+
+		ionSlider_{$field.name}.update({
+			from: thisval
+		});
+	});
+	$('#range_{$field.name}_to').on('change', function() {
+		var thisval = $(this).val();
+
+		ionSlider_{$field.name}.update({
+			to: thisval
+		});
+	});
+
+	$('#range_{$field.name}_from').trigger('change');
+	$('#range_{$field.name}_to').trigger('change');
 });
 							{/ia_add_js}
 						</div>
