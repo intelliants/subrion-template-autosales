@@ -36,12 +36,20 @@
 						</select>
 
 					{case iaField::RADIO break}
-						<div class="radios-list">
-							{if !empty($field.values)}
-							{html_radios assign='radios' name=$field.name id=$field.name options=$field.values separator='</div>'}
-							<div class="radio">{'<div class="radio">'|implode:$radios}
+						{if iaField::COMBO == $field.show_as}
+							<select class="form-control js-interactive" name="{$field.name}[]" multiple>
+								{if !empty($field.values)}
+									{html_options options=$field.values selected=$selected}
+								{/if}
+							</select>
+						{else}
+							<div class="radios-list">
+								{if !empty($field.values)}
+									{html_radios assign='radios' name=$field.name id=$field.name options=$field.values separator='</div>'}
+									<div class="radio">{'<div class="radio">'|implode:$radios}
 								{/if}
 							</div>
+						{/if}
 					{case iaField::STORAGE}
 					{case iaField::IMAGE}
 					{case iaField::PICTURES break}
