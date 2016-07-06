@@ -23,6 +23,10 @@ body {
     [class*="col-md"] + [class*="col-md"] {
       margin-top: 30px;
     }
+
+    .col-md-0 + [class*="col-md"] {
+      margin-top: 0;
+    }
   }
 }
 
@@ -107,6 +111,14 @@ body {
   &--inner {
     padding: 0;
   }
+
+  @media (max-width: @grid-float-breakpoint) {
+    margin-top: @vertical-rhythm/2;
+
+    .title {
+      margin-top: 15px;
+    }
+  }
 }
 
 
@@ -155,12 +167,22 @@ body {
       }
     }
   }
+
+  @media (max-width: @grid-float-breakpoint) {
+    padding: @vertical-rhythm/2 0;
+
+
+  }
 }
 
 .recent-cars,
 .featured-cars {
   .row + .row {
     margin-top: @vertical-rhythm;
+
+    @media (max-width: @grid-float-breakpoint) {
+      margin-top: @vertical-rhythm/2;
+    }
   }
 }
 
@@ -270,6 +292,10 @@ body {
   &--accent {
     color: @link-color;
   }
+
+  @media (max-width: @grid-float-breakpoint) {
+    margin: 0 0 @vertical-rhythm/2;
+  }
 }
 
 .page-header {
@@ -294,6 +320,10 @@ body {
     h1 {
       float: left;
       .font-normalize(28px, 0);
+    }
+
+    @media (max-width: @grid-float-breakpoint) {
+      margin-bottom: 0;
     }
   }
 
@@ -326,6 +356,17 @@ body {
       margin-top: @vertical-rhythm*2;
     }
   }
+
+  @media (max-width: @grid-float-breakpoint) {
+    padding: @vertical-rhythm/2 0;
+
+    &__body {
+
+      + .box {
+        margin-top: @vertical-rhythm/2;
+      }
+    }
+  }
 }
 
 
@@ -343,6 +384,10 @@ body {
   background: @brand-dark;
   position: relative;
   padding: @vertical-rhythm*2 0;
+
+  @media (max-width: @grid-float-breakpoint) {
+    padding: @vertical-rhythm/2 0;
+  }
 
   &__wrp {
     position: relative;

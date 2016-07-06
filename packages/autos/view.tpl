@@ -1,4 +1,4 @@
-<div class="v-item">
+<div class="v-item m-b">
 	<div class="row">
 		<div class="col-md-6">
 			{if !empty($item.auto_pictures)}

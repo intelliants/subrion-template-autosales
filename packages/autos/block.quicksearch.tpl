@@ -2,7 +2,7 @@
 	<div class="container">
 		<form class="q-search{if 'index' != $core.page.name} q-search--inner{/if}" action="{$smarty.const.IA_URL}search/cars/">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-{if 'index' == $core.page.name}6{else}12{/if}">
 					<h4>{lang key='qsearch_find_a_perfect_car'}</h4>
 					<div class="container-fluid q-search__inputs">
 						<div class="row">
@@ -76,10 +76,12 @@
 
 					<p class="q-search__info">{lang key='total_cars_listed'}: <b class="text-success">{$num_autos}</b>. <a href="{$core.packages.autos.url}add/">{lang key='get_listed'}</a></p>
 				</div>
-				<div class="col-md-6">
-					<h4>{lang key='qsearch_popular_makes'}</h4>
-					{ia_blocks block='popular_makes'}
-				</div>
+				{if 'index' == $core.page.name}
+					<div class="col-md-6">
+						<h4>{lang key='qsearch_popular_makes'}</h4>
+						{ia_blocks block='popular_makes'}
+					</div>
+				{/if}
 			</div>
 		</form>
 	</div>

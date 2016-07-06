@@ -4,8 +4,8 @@
 	<summary>Template for Subrion Autos Script</summary>
 	<author>Gleb Surinov</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>1.1.4</version>
-	<date>2016-04-19</date>
+	<version>1.1.5</version>
+	<date>2016-07-06</date>
 	<compatibility>4.0</compatibility>
 
 	<dependency type="package" exist="1">autos</dependency>
@@ -165,7 +165,7 @@
 		<block position="by_year" status="active" pages="index" header="0">auto_year_list</block>
 		<block position="featured" status="active" sticky="0" pages="index" header="0">auto_featured</block>
 		<block position="recent" status="active" sticky="0" pages="index" header="0" collapsible="0">auto_recent</block>
-		<block position="verytop" status="active" pages="index" header="0">auto_sponsored</block>
+		<block position="verytop" status="active" sticky="0" pages="index" header="0">auto_sponsored</block>
 		<block position="left" status="active" pages="autos_view" header="0" order="2">autos_enquiry_form</block>
 		<block position="left" order="-1" status="active" pages="autos_view" header="0">autos_author</block>
 		<block position="tools" header="0" status="active" sticky="1" order="1">autos_tools</block>
@@ -327,4 +327,18 @@
 		<phrase category="frontend" key="as_price_min">Price min</phrase>
 		<phrase category="frontend" key="as_price_max">Price max</phrase>
 	</phrases>
+
+	<hook name="phpCoreBeforePageDisplay" page_type="front">
+		<![CDATA[
+if (iaView::REQUEST_HTML == $iaView->getRequestType())
+{
+	require_once IA_INCLUDES . 'utils/Mobile_Detect.php';
+	$detect = new Mobile_Detect;
+
+	$iaView->assign('isMobile', ($detect->isMobile() && !$detect->isTablet()));
+
+	$iaView->assign('isTablet', $detect->isTablet());
+}
+		]]>
+	</hook>
 </template>

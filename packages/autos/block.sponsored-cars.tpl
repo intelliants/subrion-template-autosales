@@ -59,7 +59,7 @@ $(function() {
 		margin: 30,
 		dots: false,
 		nav: true,
-		loop: true,
+		loop: false,
 		autoplay:true,
 		autoplayTimeout:2000,
 		autoplayHoverPause:true,

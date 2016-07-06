@@ -16,12 +16,24 @@
     background-repeat: no-repeat;
 
     .img-retina(@logo-path, @logo-path2x, 158px, 18px);
+
+    @media (max-width: @grid-float-breakpoint) {
+      margin: (@navbar-height-sm - 18)/2 0;
+    }
   }
 
   > img {
     max-height: 30px;
     display: inline-block;
     margin: (@navbar-height - 30)/2 0;
+
+    @media (max-width: @grid-float-breakpoint) {
+      margin: (@navbar-height-sm - 30)/2 0;
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    height: @navbar-height-sm;
   }
 }
 
@@ -33,6 +45,10 @@
     > a {
       float: left;
     }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    min-height: @navbar-height-sm;
   }
 }
 
@@ -122,6 +138,10 @@
     &:focus {
       border-color: fade(@navbar-default-link-active-color, 70%);
       background-color: fade(@navbar-default-link-active-color, 30%);
+    }
+
+    @media (max-width: @grid-float-breakpoint) {
+      margin: (@navbar-height-sm - 34)/2 0;
     }
   }
 }

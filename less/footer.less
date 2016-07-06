@@ -11,6 +11,10 @@
     border-bottom: 1px solid fade(@lines-color, 60%);
     padding-bottom: @gap;
   }
+
+  @media (max-width: @grid-float-breakpoint) {
+    padding: @vertical-rhythm/2 0;
+  }
 }
 
 .b-contacts {
@@ -39,8 +43,8 @@
   padding: @vertical-rhythm 0;
   position: relative;
 
-  @media (max-width: @screen-md) {
-
+  @media (max-width: @grid-float-breakpoint) {
+    padding: @vertical-rhythm/2 0;
   }
 }
 

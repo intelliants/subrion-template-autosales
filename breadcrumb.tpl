@@ -13,9 +13,7 @@
 				{/foreach}
 			</ol>
 
-			<a href="#" class="q-search-toggle js-q-search-toggle">
-				<span class="fa fa-search"></span> {lang key='search_for_car'}
-			</a>
+			<a href="#" class="q-search-toggle js-q-search-toggle" title="{lang key='search_for_car'}"><span class="fa fa-search"></span></a>
 
 			{if isset($core.page.info.actions)}
 				<div class="action-buttons">
