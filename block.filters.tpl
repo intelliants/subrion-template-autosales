@@ -104,8 +104,8 @@ $(function()
 		});
 	});
 
-	$('#range_{$field.name}_from').trigger('change');
-	$('#range_{$field.name}_to').trigger('change');
+	// $('#range_{$field.name}_from').trigger('change');
+	// $('#range_{$field.name}_to').trigger('change');
 });
 							{/ia_add_js}
 						</div>
