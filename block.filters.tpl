@@ -57,20 +57,7 @@
 
 					{case iaField::NUMBER break}
 						<div class="range-slider">
-							<input class="hidden no-js js-range-slider" id="range_{$field.name}" type="text" name=""
-								data-type="double" 
-								data-force-edges="true" 
-								data-min="{$field.range[0]}" 
-								data-max="{$field.range[1]}" 
-								data-from="{$field.range[0]}" 
-								data-to="{$field.range[1]}"
-								{if 'release_year' == $field.name}
-									data-step="1"
-									data-prettify-enabled="false"
-								{else}
-									data-step="1000"
-								{/if}
-							>
+							<input class="hidden no-js js-range-slider" id="range_{$field.name}" type="text" name="">
 
 							<input id="range_{$field.name}_from" type="hidden" name="{$field.name}[f]" maxlength="{$field.length}" {if $selected} value="{$selected.f|escape:'html'}"{/if}>
 							<input id="range_{$field.name}_to" type="hidden" name="{$field.name}[t]" maxlength="{$field.length}" {if $selected} value="{$selected.t|escape:'html'}"{/if}>
@@ -80,6 +67,18 @@ $(function()
 {
 	$('#range_{$field.name}').ionRangeSlider(
 	{
+		type: 'double',
+		force_edges: true,
+		min: "{$field.range[0]}",
+		max: "{$field.range[1]}",
+		from: "{$field.range[0]}",
+		to: "{$field.range[1]}",
+		{if 'release_year' == $field.name}
+			prettify_enabled: false,
+			step: 1,
+		{else}
+			step: 1000,
+		{/if}
 		onFinish: function(obj)
 		{
 			$('#range_{$field.name}_from').val(obj.from).trigger('change');
