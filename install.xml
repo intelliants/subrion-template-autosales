@@ -4,8 +4,8 @@
 	<summary>Template for Subrion Autos Script</summary>
 	<author>Gleb Surinov</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>1.1.5</version>
-	<date>2016-07-06</date>
+	<version>1.1.6</version>
+	<date>2016-07-08</date>
 	<compatibility>4.0</compatibility>
 
 	<dependency type="package" exist="1">autos</dependency>

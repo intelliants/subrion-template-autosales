@@ -359,7 +359,10 @@
       }
     }
 
-    @media (max-width: @screen-xs) {
+    @media (max-width: @grid-float-breakpoint) {
+      [class*='owl-'] {
+        display: none;
+      }
       // right: auto;
       // left: 50%;
       // top: auto;
