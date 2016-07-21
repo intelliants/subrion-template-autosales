@@ -61,10 +61,10 @@
 					{/if}
 				</div>
 				<div class="v-item__header__social">
-					<a href="https://www.facebook.com/sharer/sharer.php?u={$smarty.const.IA_SELF|escape:'url'}&t={$item.model}, {$item.release_year}" title="Share on Facebook" target="_blank" class="btn btn-sm btn-facebook"><i class="fa fa-facebook"></i></a></li>
-					<a href="https://twitter.com/intent/tweet?source={$smarty.const.IA_SELF|escape:'url'}&text={$item.model}, {$item.release_year}:{$smarty.const.IA_SELF|escape:'url'}" title="Share on Twitter" target="_blank" class="btn btn-sm btn-twitter"><i class="fa fa-twitter"></i></a></li>
-					<a href="https://plus.google.com/share?url={$smarty.const.IA_SELF|escape:'url'}" title="Share on Google+" target="_blank" class="btn btn-sm btn-googleplus"><i class="fa fa-google-plus"></i></a></li>
-					<a href="mailto:?subject={$item.model},{$item.release_year}&body={$item.model}, {$item.release_year}:{$smarty.const.IA_SELF|escape:'url'}" target="_blank" title="Email" class="btn btn-sm btn-email"><i class="fa fa-envelope"></i></a></li>
+					<a href="https://www.facebook.com/sharer/sharer.php?u={$smarty.const.IA_SELF|escape:'url'}&t={$item.model}, {$item.release_year}" title="Share on Facebook" target="_blank" class="btn btn-sm btn-facebook"><i class="fa fa-facebook"></i></a>
+					<a href="https://twitter.com/intent/tweet?source={$smarty.const.IA_SELF|escape:'url'}&text={$item.model}, {$item.release_year}:{$smarty.const.IA_SELF|escape:'url'}" title="Share on Twitter" target="_blank" class="btn btn-sm btn-twitter"><i class="fa fa-twitter"></i></a>
+					<a href="https://plus.google.com/share?url={$smarty.const.IA_SELF|escape:'url'}" title="Share on Google+" target="_blank" class="btn btn-sm btn-googleplus"><i class="fa fa-google-plus"></i></a>
+					<a href="mailto:?subject={$item.model},{$item.release_year}&body={$item.model}, {$item.release_year}:{$smarty.const.IA_SELF|escape:'url'}" target="_blank" title="Email" class="btn btn-sm btn-email"><i class="fa fa-envelope"></i></a>
 				</div>
 			</div>
 		</div>
