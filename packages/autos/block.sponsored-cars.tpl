@@ -69,7 +69,7 @@ $(function() {
 				items: 1
 			},
 			320: {
-				items: 2
+				items: 1
 			},
 			500: {
 				items: 3

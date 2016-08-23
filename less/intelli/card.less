@@ -346,12 +346,49 @@
 	.ia-car-summary {
 		display: block;
 	}
+
+	@media (max-width: @screen-xs) {
+		padding: 5px;
+
+		&__content {
+			margin-left: 70px;
+			padding-right: 0;
+		}
+
+		.ia-car-info {
+			&__icon {
+				padding-left: 0;
+				margin-right: 1px;
+				font-size: 12px;
+				line-height: 16px;
+
+				&::before {
+					display: none;
+				}
+
+				&::after {
+					content: ',';
+				}
+			}
+		}
+
+		.ia-card__badge {
+			top: 8px;
+			left: 8px;
+			font-size: 0;
+
+			span {
+				font-size: 12px;
+				line-height: 16px;
+			}
+		}
+	}
 }
 .ia-cards__items.-list .ia-card.-sponsored .ia-card__content {
 	margin-left: 240px;
 
 	@media (max-width: @screen-xs) {
-		margin-left: 80px;
+		margin-left: 70px;
 	}
 }
 
