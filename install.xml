@@ -67,14 +67,14 @@
 	<config group="template_autosales"
 		    name="template_color_scheme"
 		    type="select"
-		    multiplevalues="default,dark"
+			values="default,dark"
 		    description="Template color"
 		    order="3004">default</config>
 
 	<config group="template_autosales"
 		    name="template_layout"
 		    type="hidden"
-		    multiplevalues="wide,boxed"
+		    values="wide,boxed"
 		    description="Template layout"
 		    order="3005">wide</config>
 
@@ -94,21 +94,21 @@
 	<config group="template_autosales"
 		    name="template_fotorama_car"
 		    type="select"
-		    multiplevalues="contain,cover,scaledown,none"
+			values="contain,cover,scaledown,none"
 		    description="Fotorama fit method for cars"
 		    order="3008">cover</config>
 
 	<config group="template_autosales"
 		    name="template_fotorama_service"
 		    type="select"
-		    multiplevalues="contain,cover,scaledown,none"
+			values="contain,cover,scaledown,none"
 		    description="Fotorama fit method for services"
 		    order="3009">cover</config>
 
 	<config group="template_autosales"
 		    name="template_fotorama_part"
 		    type="select"
-		    multiplevalues="contain,cover,scaledown,none"
+			values="contain,cover,scaledown,none"
 		    description="Fotorama fit method for parts"
 		    order="3010">contain</config>
 
