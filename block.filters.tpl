@@ -71,8 +71,8 @@ $(function()
 		force_edges: true,
 		min: "{$field.range[0]}",
 		max: "{$field.range[1]}",
-		from: "{$field.range[0]}",
-		to: "{$field.range[1]}",
+		from: $("#range_{$field.name}_from").val(),
+		to: $('#range_{$field.name}_to').val(),
 		{if 'release_year' == $field.name}
 			prettify_enabled: false,
 			step: 1,
