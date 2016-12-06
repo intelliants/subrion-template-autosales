@@ -44,10 +44,10 @@
 								</select>
 							</div>
 							<div class="col-md-4">
-								<input class="form-control" type="text" name="price[f]" placeholder="{lang key='as_price_min'}" value="{if isset($smarty.get.price['f'])}{$smarty.get.price['f']}{else}{/if}">
+								<input class="form-control" type="text" name="price[f]" placeholder="{lang key='as_price_min'}" value="{if isset($smarty.get.price.f)}{$smarty.get.price.f}{/if}">
 							</div>
 							<div class="col-md-4">
-								<input class="form-control" type="text" name="price[t]" placeholder="{lang key='as_price_max'}" value="{if isset($smarty.get.price['t'])}{$smarty.get.price['t']}{else}{/if}">
+								<input class="form-control" type="text" name="price[t]" placeholder="{lang key='as_price_max'}" value="{if isset($smarty.get.price.t)}{$smarty.get.price.t}{/if}">
 							</div>
 						</div>
 					</div>
