@@ -51,12 +51,12 @@
 				<div class="ia-car-info ia-car-info--block">
 					<span class="ia-car-info__icon ia-car-info__icon--body">{lang key='field_body_type'}: <a href="{$smarty.const.IA_URL}search/cars/body:{$item.body_type}/"><b>{lang key="field_body_type_{$item.body_type}"}</b></a></span>
 					{if $item.engine}
-						<span class="ia-car-info__icon ia-car-info__icon--engine">{lang key='field_engine'}: <b>{lang key="field_engine_{$item.engine}"}{if $item.engine_type} {lang key="field_engine_type_{$item.engine_type}"}{/if}{if $item.engine_size} {$item.engine_size}{/if}</b></span>
+						<span class="ia-car-info__icon ia-car-info__icon--engine">{lang key='field_engine'}: <b>{lang key="field_engine_{$item.engine}"}{if $item.engine_type} {lang key="field_engine_type_{$item.engine_type}"}{/if}{if !empty($item.engine_size)} {$item.engine_size}{/if}</b></span>
 					{/if}
 					{if $item.transmission}
 						<span class="ia-car-info__icon ia-car-info__icon--transmission">{lang key='field_transmission'}: <a href="{$smarty.const.IA_URL}search/cars/transmission:{$item.transmission}/"><b>{lang key="field_transmission_{$item.transmission}"}</b></a></span>
 					{/if}
-					{if $item.mileage}
+					{if !empty($item.mileage)}
 						<span class="ia-car-info__icon ia-car-info__icon--mileage">{lang key='field_mileage'}: <b>{$item.mileage}</b></span>
 					{/if}
 				</div>
@@ -110,46 +110,49 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="col-md-6">
-					<table class="v-item-table">
-						<tbody>
-							{if $item.horse_power}
-								<tr>
-									<td>{lang key='field_horse_power'}</td>
-									<td>{$item.horse_power}</td>
-								</tr>
-							{/if}
-							
-							{if $item.drive_type}
-								<tr>
-									<td>{lang key='field_drive_type'}</td>
-									<td><a href="{$smarty.const.IA_URL}search/cars/drive_type:{$item.drive_type}/">{lang key="field_drive_type_{$item.drive_type}"}</a></td>
-								</tr>
-							{/if}
-							{if $item.vin_code}
-								<tr>
-									<td>{lang key='field_vin_code'}</td>
-									<td>{$item.vin_code|escape:'html'}</td>
-								</tr>
-							{/if}
-							{if $item.fuel_type}
-								<tr>
-									<td>{lang key='field_fuel_type'}</td>
-									<td>
-										{assign fuel explode(',', $item.fuel_type)}
-										{foreach $fuel as $one}
-											{lang key="field_fuel_type_{$one}"}{if !$one@last}, {/if}
-										{/foreach}
-									</td>
-								</tr>
-							{/if}
-						</tbody>
-					</table>
-				</div>
+
+				{if !empty($item.horse_power) || !empty($item.drive_type) || !empty($item.vin_code) || !empty($item.fuel_type)}
+					<div class="col-md-6">
+						<table class="v-item-table">
+							<tbody>
+								{if $item.horse_power}
+									<tr>
+										<td>{lang key='field_horse_power'}</td>
+										<td>{$item.horse_power}</td>
+									</tr>
+								{/if}
+								
+								{if $item.drive_type}
+									<tr>
+										<td>{lang key='field_drive_type'}</td>
+										<td><a href="{$smarty.const.IA_URL}search/cars/drive_type:{$item.drive_type}/">{lang key="field_drive_type_{$item.drive_type}"}</a></td>
+									</tr>
+								{/if}
+								{if $item.vin_code}
+									<tr>
+										<td>{lang key='field_vin_code'}</td>
+										<td>{$item.vin_code|escape:'html'}</td>
+									</tr>
+								{/if}
+								{if $item.fuel_type}
+									<tr>
+										<td>{lang key='field_fuel_type'}</td>
+										<td>
+											{assign fuel explode(',', $item.fuel_type)}
+											{foreach $fuel as $one}
+												{lang key="field_fuel_type_{$one}"}{if !$one@last}, {/if}
+											{/foreach}
+										</td>
+									</tr>
+								{/if}
+							</tbody>
+						</table>
+					</div>
+				{/if}
 			</div>
 		</div>
 
-		{if $item.options_features}
+		{if !empty($item.options_features)}
 			<div class="v-item-info__section">
 				<h3>{lang key='car_features'}</h3>
 				<div class="v-item-features">
@@ -172,8 +175,8 @@
 				</div>
 			</div>
 		{/if}
-		
-		{if $item.additional_info}
+
+		{if !empty($item.additional_info)}
 			<div class="v-item-info__section">
 				<h3>{lang key='field_additional_info'}</h3>
 				{$item.additional_info}

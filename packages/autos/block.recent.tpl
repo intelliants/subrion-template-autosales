@@ -22,9 +22,9 @@
 							{lang key="field_engine_{$item.engine}"}{if $item.engine_type} {lang key="field_engine_type_{$item.engine_type}"}{/if}{if $item.engine_size} {$item.engine_size}{/if}, 
 						{/if}
 						{if $item.transmission}
-							{lang key="field_transmission_{$item.transmission}"}, 
+							{lang key="field_transmission_{$item.transmission}"}
 						{/if}
-						{lang key="field_exterior_color_{$item.exterior_color}"}
+						{if $item.exterior_color && isset($item.exterior_color)}, {lang key="field_exterior_color_{$item.exterior_color}"}{/if}
 					</p>
 				</div>
 			</div>

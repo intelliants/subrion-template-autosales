@@ -70,9 +70,9 @@
 				{lang key="field_engine_{$listing.engine}"}{if $listing.engine_type} {lang key="field_engine_type_{$listing.engine_type}"}{/if}{if $listing.engine_size} {$listing.engine_size}{/if}, 
 			{/if}
 			{if $listing.transmission}
-				{lang key="field_transmission_{$listing.transmission}"}, 
+				{lang key="field_transmission_{$listing.transmission}"}
 			{/if}
-			{lang key="field_exterior_color_{$listing.exterior_color}"}
+			{if $listing.exterior_color && isset($listing.exterior_color)}, {lang key="field_exterior_color_{$listing.exterior_color}"}{/if}
 		</p>
 	</div>
 </div>
