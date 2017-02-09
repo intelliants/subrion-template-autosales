@@ -9,10 +9,10 @@
 							<div class="col-md-4">
 								<div class="btn-group btn-group-justified" data-toggle="buttons">
 									<label class="btn btn-default">
-										<input type="radio" name="condition" value="new" autocomplete="off"> <span class="fa fa-check"></span> {lang key='field_condition_new'}
+										<input type="radio" name="condition" value="new" autocomplete="off"> <span class="fa fa-check"></span> {lang key='field_autos_condition+new'}
 									</label>
 									<label class="btn btn-default active">
-										<input type="radio" name="condition" value="used" autocomplete="off" checked> <span class="fa fa-check"></span> {lang key='field_condition_used'}
+										<input type="radio" name="condition" value="used" autocomplete="off" checked> <span class="fa fa-check"></span> {lang key='field_autos_condition+used'}
 									</label>
 								</div>
 							</div>
@@ -37,7 +37,7 @@
 						<div class="row">
 							<div class="col-md-4">
 								<select class="form-control" name="body">
-									<option value="">{lang key='field_body_type'}</option>
+									<option value="">{lang key='field_autos_body_type'}</option>
 									{foreach $car_blocks_data.search.body_types as $key => $value}
 										<option value="{$key}"{if isset($smarty.get.body) && $smarty.get.body == $key} selected{/if}>{$value}</option>
 									{/foreach}
@@ -56,7 +56,7 @@
 						<div class="row">
 							<div class="col-md-8">
 								<label class="checkbox-inline c-checkbox">
-									<input type="checkbox" name="auto_pictures" value="1" checked>
+									<input type="checkbox" name="pictures" value="1" checked>
 									<span class="fa fa-square"></span>
 									{lang key='with_pictures_only'}
 								</label>

@@ -8,7 +8,7 @@
 			<li class="hidden-xs"><a href="{$smarty.const.IA_URL}favorites/"><span class="fa fa-star text-warning"></span> {lang key='wishlist'}</a></li>
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					{printImage imgfile=$member.avatar title=$member.fullname|default:$member.username class='img-circle' gravatar=true email=$member.email width=20}
+					{ia_image file=$member.avatar title=$member.fullname|default:$member.username class='img-circle' gravatar=true email=$member.email width=20}
 
 					{$member.fullname|default:$member.username}
 				</a>

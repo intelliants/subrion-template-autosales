@@ -10,18 +10,18 @@
 		<span class="label label-status label-{$listing.status}" title="{lang key=$listing.status default=$listing.status}"><span class="fa fa-warning"></span> {lang key=$listing.status default=$listing.status}</span>
 	{/if}
 
-	{if $listing.auto_pictures}
+	{if $listing.pictures}
 		<a class="ia-card__image" href="{$listing.link}">
-			{printImage imgfile=$listing.auto_pictures[0]['path'] title=$listing.model}
+			{printImage imgfile=$listing.pictures[0]['path'] title=$listing.model}
 			<span class="ia-card__support-info">
-				<span class="pull-left"><span class="fa fa-image"></span> {$listing.auto_pictures_num}</span>
+				<span class="pull-left"><span class="fa fa-image"></span> {$listing.pictures_num}</span>
 				<span class="hidden-xs pull-right">{$listing.date_added|date_format:$core.config.date_format}</span>
 			</span>
 		</a>
 
 		{if $listing.sponsored}
 			<div class="ia-card__image__more hidden-xs">
-				{foreach $listing.auto_pictures as $pic}
+				{foreach $listing.pictures as $pic}
 					{if !$pic@first}
 						<a href="{$listing.link}">
 							{printImage imgfile=$pic['path'] title=$listing.model}

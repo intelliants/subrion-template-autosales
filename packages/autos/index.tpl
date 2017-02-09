@@ -24,14 +24,14 @@
 							{if 'release_year' != $sorting.field}
 								{lang key=$sorting.field}
 							{else}
-								{lang key='field_release_year'}
+								{lang key='field_autos_release_year'}
 							{/if} 
 							<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
 							<li><a href="{$smarty.const.IA_SELF}?sort=title" rel="nofollow"><span class="fa fa-font"></span> {lang key='title'}</a></li>
 							<li><a href="{$smarty.const.IA_SELF}?sort=price" rel="nofollow"><span class="fa fa-dollar"></span> {lang key='price'}</a></li>
-							<li><a href="{$smarty.const.IA_SELF}?sort=year" rel="nofollow"><span class="fa fa-calendar"></span> {lang key='field_release_year'}</a></li>
+							<li><a href="{$smarty.const.IA_SELF}?sort=year" rel="nofollow"><span class="fa fa-calendar"></span> {lang key='field_autos_release_year'}</a></li>
 							<li><a href="{$smarty.const.IA_SELF}?sort=date" rel="nofollow"><span class="fa fa-clock-o"></span> {lang key='date'}</a></li>
 						</ul>
 					</div>

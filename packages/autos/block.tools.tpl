@@ -17,8 +17,8 @@
 							<div class="owl-carousel f-tools__c js-f-tools-c1">
 								{foreach $car_blocks_data.recently_viewed as $entry}
 									<div class="ia-item f-tools__c__item">
-										{if isset($entry.auto_pictures[0]['path']) && $entry.auto_pictures[0]['path']}
-											<a href="{ia_url type='url' item='autos' data=$entry}" class="ia-item__image">{printImage imgfile=$entry.auto_pictures[0]['path'] title=$entry.model|strip_tags|truncate:'30' width=60}</a>
+										{if isset($entry.pictures[0]['path']) && $entry.pictures[0]['path']}
+											<a href="{ia_url type='url' item='autos' data=$entry}" class="ia-item__image">{printImage imgfile=$entry.pictures[0]['path'] title=$entry.model|strip_tags|truncate:'30' width=60}</a>
 										{/if}
 
 										<div class="ia-item__content">
@@ -67,8 +67,8 @@ $(function() {
 								<div class="owl-carousel f-tools__c js-f-tools-c2">
 									{foreach $car_blocks_data.saved_listings as $entry}
 										<div class="ia-item f-tools__c__item">
-											{if isset($entry.auto_pictures[0]['path']) && $entry.auto_pictures[0]['path']}
-												<a href="{ia_url type='url' item='autos' data=$entry}" class="ia-item__image">{printImage imgfile=$entry.auto_pictures[0]['path'] title=$entry.model|strip_tags|truncate:'30' width=60}</a>
+											{if isset($entry.pictures[0]['path']) && $entry.pictures[0]['path']}
+												<a href="{ia_url type='url' item='autos' data=$entry}" class="ia-item__image">{printImage imgfile=$entry.pictures[0]['path'] title=$entry.model|strip_tags|truncate:'30' width=60}</a>
 											{/if}
 
 											<div class="ia-item__content">
@@ -167,8 +167,8 @@ $(function() {
 						<div class="ia-items recently-viewed-cars">
 							{foreach $car_blocks_data.recently_viewed as $entry}
 								<div class="ia-item">
-									{if isset($entry.auto_pictures[0]['path']) && $entry.auto_pictures[0]['path']}
-										<a href="{ia_url type='url' item='autos' data=$entry}" class="ia-item__image">{printImage imgfile=$entry.auto_pictures[0]['path'] title=$entry.model|strip_tags|truncate:'30' width=60}</a>
+									{if isset($entry.pictures[0]['path']) && $entry.pictures[0]['path']}
+										<a href="{ia_url type='url' item='autos' data=$entry}" class="ia-item__image">{printImage imgfile=$entry.pictures[0]['path'] title=$entry.model|strip_tags|truncate:'30' width=60}</a>
 									{/if}
 
 									<div class="ia-item__content">
@@ -189,8 +189,8 @@ $(function() {
 						<div class="ia-items saved-cars">
 							{foreach $car_blocks_data.saved_listings as $entry}
 								<div class="ia-item">
-									{if isset($entry.auto_pictures[0]['path']) && $entry.auto_pictures[0]['path']}
-										<a href="{ia_url type='url' item='autos' data=$entry}" class="ia-item__image">{printImage imgfile=$entry.auto_pictures[0]['path'] title=$entry.model|strip_tags|truncate:'30' width=60}</a>
+									{if isset($entry.pictures[0]['path']) && $entry.pictures[0]['path']}
+										<a href="{ia_url type='url' item='autos' data=$entry}" class="ia-item__image">{printImage imgfile=$entry.pictures[0]['path'] title=$entry.model|strip_tags|truncate:'30' width=60}</a>
 									{/if}
 
 									<div class="ia-item__content">
