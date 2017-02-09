@@ -48,12 +48,12 @@
 		<a class="ia-card__title" href="{$listing.link}">{$listing.model}, {$listing.release_year}</a>
 		<p class="ia-card__sub-title">{$listing.price_formatted}</p>
 		<div class="ia-car-info">
-			<a class="ia-car-info__icon ia-car-info__icon--body" href="{$listing.link}">{lang key="field_body_type_{$listing.body_type}"}</a>
+			<a class="ia-car-info__icon ia-car-info__icon--body" href="{$listing.link}">{lang key="field_autos_body_type+{$listing.body_type}"}</a>
 			{if $listing.engine}
-				<a class="ia-car-info__icon ia-car-info__icon--engine" href="{$listing.link}">{lang key="field_engine_{$listing.engine}"}{if $listing.engine_type} {lang key="field_engine_type_{$listing.engine_type}"}{/if}{if $listing.engine_size} {$listing.engine_size}{/if}</a>
+				<a class="ia-car-info__icon ia-car-info__icon--engine" href="{$listing.link}">{lang key="field_autos_engine+{$listing.engine}"}{if $listing.engine_type} {lang key="field_autos_engine_type+{$listing.engine_type}"}{/if}{if $listing.engine_size} {$listing.engine_size}{/if}</a>
 			{/if}
 			{if $listing.transmission}
-				<a class="ia-car-info__icon ia-car-info__icon--transmission" href="{$listing.link}">{lang key="field_transmission_{$listing.transmission}"}</a>
+				<a class="ia-car-info__icon ia-car-info__icon--transmission" href="{$listing.link}">{lang key="field_autos_transmission+{$listing.transmission}"}</a>
 			{/if}
 			{if $listing.mileage}
 				<a class="ia-car-info__icon ia-car-info__icon--mileage" href="{$listing.link}">{$listing.mileage}</a>
@@ -65,14 +65,14 @@
 		{/if}
 
 		<p class="ia-card__text">
-			<a href="{$listing.link}">{lang key="field_body_type_{$listing.body_type}"}</a>, 
+			<a href="{$listing.link}">{lang key="field_autos_body_type+{$listing.body_type}"}</a>,
 			{if $listing.engine}
-				{lang key="field_engine_{$listing.engine}"}{if $listing.engine_type} {lang key="field_engine_type_{$listing.engine_type}"}{/if}{if $listing.engine_size} {$listing.engine_size}{/if}, 
+				{lang key="field_autos_engine+{$listing.engine}"}{if $listing.engine_type} {lang key="field_autos_engine_type+{$listing.engine_type}"}{/if}{if $listing.engine_size} {$listing.engine_size}{/if},
 			{/if}
 			{if $listing.transmission}
-				{lang key="field_transmission_{$listing.transmission}"}
+				{lang key="field_autos_transmission+{$listing.transmission}"}
 			{/if}
-			{if $listing.exterior_color && isset($listing.exterior_color)}, {lang key="field_exterior_color_{$listing.exterior_color}"}{/if}
+			{if $listing.exterior_color && isset($listing.exterior_color)}, {lang key="field_autos_exterior_color+{$listing.exterior_color}"}{/if}
 		</p>
 	</div>
 </div>
