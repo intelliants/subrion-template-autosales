@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<template name="autosales">
+<module type="template" name="autosales">
 	<title>AutoSales</title>
 	<summary>Template for Subrion Autos Script</summary>
 	<author>Gleb Surinov</author>
@@ -341,4 +341,4 @@ if (iaView::REQUEST_HTML == $iaView->getRequestType())
 }
 		]]>
 	</hook>
-</template>
+</module>
