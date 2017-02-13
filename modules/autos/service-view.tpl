@@ -18,8 +18,7 @@
 		</ul>
 		<h2>
 			{if $item.logo}
-				{$logo = unserialize($item.logo)}
-				{printImage imgfile=$logo.path title="{$item.title}" class='img-circle' width=30}
+				{ia_image file=$item.logo title=$item.title class='img-circle' width=30}
 			{/if}
 			<span>{$item.title}</span>
 		</h2>
@@ -109,7 +108,9 @@ function geocodeAddress(geocoder, resultsMap) {
 					 data-allowfullscreen="true"
 					 data-fit="{$core.config.template_fotorama_service}">
 					{foreach $pics as $entry}
-						<a class="ia-item-view__gallery__item" href="{printImage imgfile=$entry.path url=true fullimage=true}">{printImage imgfile=$entry.path title=$entry.title}</a>
+						<a class="ia-item-view__gallery__item" href="{printImage imgfile=$entry.path url=true fullimage=true}">
+							{ia_image file=$entry.path title=$entry.title}
+						</a>
 					{/foreach}
 				</div>
 			</div>

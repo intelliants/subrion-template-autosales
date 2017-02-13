@@ -7,7 +7,7 @@
 
 						{if $item.pictures}
 							<a class="ia-card__image" href="{$item.link}">
-								{printImage imgfile=$item.pictures[0]['path'] title=$item.model}
+								{ia_image file=$item.pictures[0]['path'] title=$item.model}
 
 								<span class="ia-card__badge">{lang key="field_autos_condition+{$item.condition}"}</span>
 

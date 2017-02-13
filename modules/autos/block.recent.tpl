@@ -5,7 +5,7 @@
 
 				{if $item.pictures}
 					<a class="ia-card__image" href="{$item.link}">
-						{printImage imgfile=$item.pictures[0]['path'] title=$item.model width=80}
+						{ia_image file=$item.pictures[0]['path'] title=$item.model width=80}
 					</a>
 				{/if}
 
