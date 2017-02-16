@@ -29,19 +29,19 @@
 							</div>
 							<a class="ia-card__title" href="{$item.link}">{$item.model}, {$item.release_year}</a>
 							<p class="ia-card__sub-title">{$item.price_formatted}</p>
-							{if $item.mileage}
+							{if !empty($item.mileage)}
 								<p class="ia-card__text">
 									<span class="fa fa-tachometer"></span> <b>{$item.mileage}</b>
 								</p>
 							{/if}
 							<p class="ia-card__text">
-								{if $item.engine}
-									{lang key="field_autos_engine+{$item.engine}"}{if $item.engine_type} {lang key="field_autos_engine_type+{$item.engine_type}"}{/if}{if $item.engine_size} {$item.engine_size}{/if},
+								{if !empty($item.engine)}
+									{lang key="field_autos_engine+{$item.engine}"}{if !empty($item.engine_type)} {lang key="field_autos_engine_type+{$item.engine_type}"}{/if}{if !empty($item.engine_size)} {$item.engine_size}{/if},
 								{/if}
-								{if $item.transmission}
+								{if !empty($item.transmission)}
 									{lang key="field_autos_transmission+{$item.transmission}"}
 								{/if}
-								{if $item.exterior_color && isset($item.exterior_color)}, {lang key="field_autos_exterior_color+{$item.exterior_color}"}{/if}
+								{if !empty($item.exterior_color)}, {lang key="field_autos_exterior_color+{$item.exterior_color}"}{/if}
 							</p>
 						</div>
 					</div>
