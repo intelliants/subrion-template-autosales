@@ -12,7 +12,7 @@
 						 data-allowfullscreen="true"
 						 data-fit="{$core.config.template_fotorama_car}">
 						{foreach $item.pictures as $entry}
-							<a class="v-item__gallery__item" href="{ia_image file=$entry url=true type=large}">{ia_image file=$entry title=$entry.title}</a>
+							<a class="v-item__gallery__item" href="{ia_image file=$entry url=true type=large}">{ia_image file=$entry}</a>
 						{/foreach}
 					</div>
 				</div>
