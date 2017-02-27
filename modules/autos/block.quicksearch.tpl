@@ -86,7 +86,7 @@
 		</form>
 	</div>
 </div>
-{ia_print_js files='_IA_URL_packages/autos/js/front/search'}
+{ia_print_js files='_IA_URL_modules/autos/js/front/search'}
 
 {ia_add_js}
 	$(function() {

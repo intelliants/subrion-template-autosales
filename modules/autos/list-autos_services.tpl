@@ -27,7 +27,7 @@
 				{$services = explode(',', $listing.categories)}
 
 				{foreach $services as $service}
-					{lang key="field_autos_services_categories_{$service}"}{if !$service@last}, {/if}
+					{lang key="field_autos_services_categories+{$service}"}{if !$service@last}, {/if}
 				{/foreach}
 			</small>
 		</div>

@@ -1,7 +1,7 @@
 <div class="v-item">
 	<div class="v-item__header">
 		<ul class="content__actions">
-			{if isset($author) && $author}
+			{if !empty($author)}
 				<li class="text-fade-50 small"><a href="{ia_url type='url' item='members' data=$author}"><span class="fa fa-user"></span> {lang key='by'} {$author.fullname|default:$author.username}</a></li>
 			{/if}
 			{foreach $core.actions as $name => $action}
@@ -30,32 +30,32 @@
 		<table class="v-item-table">
 			<tbody>
 				<tr>
-					<td>{lang key='field_categories'}</td>
+					<td>{lang key='field_autos_services_categories'}</td>
 					<td>
 						{$services = explode(',', $item.categories)}
 
 						{foreach $services as $service}
-							{lang key="field_autos_services_categories_{$service}"}{if !$service@last}, {/if}
+							{lang key="field_autos_services_categories+{$service}"}{if !$service@last}, {/if}
 						{/foreach}
 					</td>
 				</tr>
 				<tr>
-					<td>{lang key='field_company_address'}</td>
+					<td>{lang key='field_autos_services_company_address'}</td>
 					<td>{$item.company_address}</td>
 				</tr>
 				<tr>
-					<td>{lang key='field_company_phone'}</td>
+					<td>{lang key='field_autos_services_company_phone'}</td>
 					<td>{$item.company_phone}</td>
 				</tr>
-				{if $item.company_website}
+				{if !empty($item.company_website)}
 					<tr>
-						<td>{lang key='field_company_website'}</td>
+						<td>{lang key='field_autos_services_company_website'}</td>
 						<td>{$item.company_website|linkify}</td>
 					</tr>
 				{/if}
-				{if $item.company_skype}
+				{if !empty($item.company_skype)}
 					<tr>
-						<td>{lang key='field_company_skype'}</td>
+						<td>{lang key='field_autos_services_company_skype'}</td>
 						<td><a href="call:{$item.company_skype}">{$item.company_skype}</a></td>
 					</tr>
 				{/if}

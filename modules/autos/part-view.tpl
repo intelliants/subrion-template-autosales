@@ -27,7 +27,7 @@
 				{$cats = explode(',', $item.categories)}
 
 				{foreach $cats as $cat}
-					{lang key="field_autos_parts_categories_{$cat}"}{if !$cat@last}, {/if}
+					{lang key="field_autos_parts_categories+{$cat}"}{if !$cat@last}, {/if}
 				{/foreach}
 			</span>
 			<span class="v-item__header__info__item">{lang key='added_on'} {$item.date_added|date_format:$core.config.date_format}</b></span>
@@ -46,7 +46,7 @@
 			 data-allowfullscreen="true"
 			 data-fit="{$core.config.template_fotorama_part}">
 			{foreach $item.pictures as $entry}
-				<a class="v-item__gallery__item" href="{ia_image file=$entry type='large' url=true}">{ia_image file=$entry title=$entry.title}</a>
+				<a class="v-item__gallery__item" href="{ia_image file=$entry type='large' url=true}">{ia_image file=$entry}</a>
 			{/foreach}
 		</div>
 	</div>
