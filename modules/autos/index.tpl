@@ -2,7 +2,7 @@
 	<div class="page-description">{$category.description}</div>
 {/if}
 
-{if isset($models) && $models}
+{if !empty($models)}
 	{ia_block title={lang key='autos_models'} style='fixed' id='auto_categories'}
 		<div class="ia-categories">
 			{include file='ia-categories.tpl' categories=$models item='autos_models' show_amount=true num_columns=$core.config.autos_model_columns}
@@ -10,7 +10,7 @@
 	{/ia_block}
 {/if}
 
-{if isset($listings) && $listings}
+{if !empty($listings)}
 	<div class="ia-cards">
 		<div class="ia-cards__actions">
 			{if 'autos_index_member' == $core.page.name}
