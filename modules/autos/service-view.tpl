@@ -90,15 +90,13 @@ function geocodeAddress(geocoder, resultsMap) {
   });
 }
 			</script>
-			<script async defer
-			        src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+			<script async defer src="//maps.googleapis.com/maps/api/js?callback=initMap"></script>
 		</div>
 	</div>
 
 	<div class="col-md-8">
 		{if !empty($item.pictures)}
 			{ia_add_media files='fotorama'}
-			{$pics=unserialize($item.pictures)}
 
 			<div class="ia-item-view__gallery">
 				<div class="fotorama"
@@ -107,10 +105,8 @@ function geocodeAddress(geocoder, resultsMap) {
 					 data-ratio="800/400"
 					 data-allowfullscreen="true"
 					 data-fit="{$core.config.template_fotorama_service}">
-					{foreach $pics as $entry}
-						<a class="ia-item-view__gallery__item" href="{printImage imgfile=$entry.path url=true fullimage=true}">
-							{ia_image file=$entry.path title=$entry.title}
-						</a>
+					{foreach $item.pictures as $entry}
+						<a class="v-item__gallery__item" href="{ia_image file=$entry type='large' url=true}">{ia_image file=$entry title=$entry.title}</a>
 					{/foreach}
 				</div>
 			</div>

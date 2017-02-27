@@ -37,7 +37,6 @@
 
 {if !empty($item.pictures)}
 	{ia_add_media files='fotorama'}
-	{$pics=unserialize($item.pictures)}
 
 	<div class="v-item__gallery">
 		<div class="fotorama" 
@@ -46,8 +45,8 @@
 			 data-ratio="800/400"
 			 data-allowfullscreen="true"
 			 data-fit="{$core.config.template_fotorama_part}">
-			{foreach $pics as $entry}
-				<a class="v-item__gallery__item" href="{printImage imgfile=$entry.path url=true fullimage=true}">{printImage imgfile=$entry.path title=$entry.title}</a>
+			{foreach $item.pictures as $entry}
+				<a class="v-item__gallery__item" href="{ia_image file=$entry type='large' url=true}">{ia_image file=$entry title=$entry.title}</a>
 			{/foreach}
 		</div>
 	</div>

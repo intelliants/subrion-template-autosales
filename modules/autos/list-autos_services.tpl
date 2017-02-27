@@ -1,8 +1,7 @@
 <div class="ia-item ia-item--border ia-item--{$listing.status} {if $listing.featured}ia-item--featured{/if} {if $listing.sponsored}ia-item--sponsored{/if}">
-	{if $listing.logo}
-		{$logo = unserialize($listing.logo)}
+	{if !empty($listing.logo)}
 		<a class="ia-item__image" href="{ia_url item='autos_services' data=$listing type='url'}">
-			{printImage imgfile=$logo.path title="{$listing.title}" class='img-responsive'}
+			{ia_image file=$logo title=$listing.title class='img-responsive'}
 		</a>
 	{/if}
 
