@@ -7,9 +7,9 @@
 				<div class="ia-carousel__item">
 					<div class="ia-card -{$item.status} {if 'hidden' == $item.status}-hidden{/if}">
 
-						{if $item.pictures}
+						{if !empty($item.pictures)}
 							<a class="ia-card__image" href="{$item.link}">
-								{ia_image file=$item.pictures[0]['path'] title=$item.model}
+								{ia_image file=$item.pictures[0] title=$item.model}
 
 								<span class="ia-card__badge">{lang key="field_autos_condition+{$item.condition}"}</span>
 
