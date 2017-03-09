@@ -27,7 +27,7 @@
 				{$cats = explode(',', $item.categories)}
 
 				{foreach $cats as $cat}
-					{lang key="field_autos_parts_categories+{$cat}"}{if !$cat@last}, {/if}
+					{lang key="field_autos_parts_categories_{$cat}"}{if !$cat@last}, {/if}
 				{/foreach}
 			</span>
 			<span class="v-item__header__info__item">{lang key='added_on'} {$item.date_added|date_format:$core.config.date_format}</b></span>

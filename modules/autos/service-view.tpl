@@ -18,7 +18,8 @@
 		</ul>
 		<h2>
 			{if $item.logo}
-				{ia_image file=$item.logo title=$item.title class='img-circle' width=30}
+				{$logo = unserialize($item.logo[0])}
+				{ia_image file=$logo title=$item.title type='thumbnail' class='img-circle' width=30}
 			{/if}
 			<span>{$item.title}</span>
 		</h2>
@@ -35,7 +36,7 @@
 						{$services = explode(',', $item.categories)}
 
 						{foreach $services as $service}
-							{lang key="field_autos_services_categories+{$service}"}{if !$service@last}, {/if}
+							{lang key="field_autos_services_categories_{$service}"}{if !$service@last}, {/if}
 						{/foreach}
 					</td>
 				</tr>
@@ -61,44 +62,13 @@
 				{/if}
 			</tbody>
 		</table>
-
-		<div class="v-item-info">
-			<div id="gm-map" class="m-t" style="height: 300px;width: 100%;"></div>
-			<script type="text/javascript">
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('gm-map'), {
-    zoom: 14,
-    center: { lat: -34.397, lng: 150.644 }
-  });
-  var geocoder = new google.maps.Geocoder();
-
-  geocodeAddress(geocoder, map);
-}
-
-function geocodeAddress(geocoder, resultsMap) {
-  var address = '{$item.company_address}';
-  geocoder.geocode({ 'address': address }, function(results, status) {
-    if (status === google.maps.GeocoderStatus.OK) {
-      resultsMap.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-        map: resultsMap,
-        position: results[0].geometry.location
-      });
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-}
-			</script>
-			<script async defer src="//maps.googleapis.com/maps/api/js?callback=initMap"></script>
-		</div>
 	</div>
 
 	<div class="col-md-8">
 		{if !empty($item.pictures)}
 			{ia_add_media files='fotorama'}
 
-			<div class="ia-item-view__gallery">
+			<div class="ia-item-view__gallery m-b">
 				<div class="fotorama"
 					 data-nav="thumbs"
 					 data-width="100%"
