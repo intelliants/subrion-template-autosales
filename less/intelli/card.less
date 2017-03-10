@@ -550,3 +550,15 @@
 		}
 	}
 }
+
+
+@media (max-width: @screen-md) {
+	.featured-cars {
+		[class^="col-md"] {
+			margin-top: 10px !important;
+		}
+		.ia-card {
+			.ia-card--hsm();
+		}
+	}
+}

@@ -17,7 +17,9 @@
 								</span>
 							</a>
 						{else}
-							<img class="img-responsive" src="{$img}no-car-preview.png" alt="{$item.model}">
+							<a class="ia-card__image" href="{$item.link}">
+								<img class="img-responsive" src="{$img}no-car-preview.png" alt="{$item.model}">
+							</a>
 						{/if}
 
 						<div class="ia-card__content">
