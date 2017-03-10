@@ -12,7 +12,7 @@
 
 	{if !empty($listing.pictures)}
 		<a class="ia-card__image" href="{$listing.link}">
-			{ia_image file=$listing.pictures[0] title=$listing.model}
+			{ia_image file=$listing.pictures[0] title=$listing.model type='thumbnail'}
 			<span class="ia-card__support-info">
 				<span class="pull-left"><span class="fa fa-image"></span> {$listing.pictures_num}</span>
 				<span class="hidden-xs pull-right">{$listing.date_added|date_format:$core.config.date_format}</span>
@@ -33,6 +33,8 @@
 				{/foreach}
 			</div>
 		{/if}
+	{else}
+		<a class="ia-card__image" href="{$listing.link}"><img class="img-responsive" src="{$img}no-car-preview.png" alt="{$listing.model}"></a>
 	{/if}
 
 	<div class="ia-card__content">

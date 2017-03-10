@@ -7,7 +7,7 @@
 
 						{if !empty($item.pictures)}
 							<a class="ia-card__image" href="{$item.link}">
-								{ia_image file=$item.pictures[0] title=$item.model}
+								{ia_image file=$item.pictures[0] title=$item.model type='thumbnail'}
 
 								<span class="ia-card__badge">{lang key="field_autos_condition+{$item.condition}"}</span>
 
@@ -16,6 +16,8 @@
 									<span class="pull-right">{$item.date_added|date_format:$core.config.date_format}</span>
 								</span>
 							</a>
+						{else}
+							<img class="img-responsive" src="{$img}no-car-preview.png" alt="{$item.model}">
 						{/if}
 
 						<div class="ia-card__content">

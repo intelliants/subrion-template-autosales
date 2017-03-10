@@ -16,38 +16,16 @@
 						{/foreach}
 					</div>
 				</div>
+			{else}
+				<div class="v-item__gallery">
+					<img class="img-responsive" src="{$img}no-car-preview.png" alt="{$item.model}">
+				</div>
 			{/if}
 		</div>
 		<div class="col-md-6">
 			<div class="v-item__header">
-				<ul class="content__actions">
-					{if $member && $member.id == $item.member_id}
-						<li>
-							<span class="label label-{$item.status}" title="{lang key=$item.status default=$item.status}"><span class="fa fa-warning"></span> {lang key=$item.status default=$item.status}</span>
-						</li>
-					{/if}
-					{foreach $core.actions as $name => $action}
-						<li>
-							{if 'action-favorites' == $name}
-								{printFavorites item=$item itemtype=$item.item guests=true tpl='no-text'}
-							{else}
-								<a data-toggle="tooltip" title="{$action.title}" {foreach $action.attributes as $key => $value}{$key}="{$value}" {/foreach}>
-									<span class="fa fa-{$name}" title="{$action.title}"></span>
-								</a>
-							{/if}
-						</li>
-					{/foreach}
-				</ul>
-
 				<h2><span>{$item.model}, {$item.release_year}</span></h2>
 				<div class="v-item__header__price">{$item.price_formatted}</div>
-				<div class="v-item-header__info">
-					{if $item.sponsored}<span class="v-item__header__info__item label label-warning">{lang key='sponsored'}</span>{/if}
-					{if $item.featured}<span class="v-item__header__info__item label label-info">{lang key='featured'}</span>{/if}
-					<span class="v-item__header__info__item">{lang key='field_autos_condition'}: <a href="{$searchPageUrl}condition:{$item.condition}/"><b>{lang key="field_autos_condition+{$item.condition}"}</b></a></span>
-					<span class="v-item__header__info__item"><span class="fa fa-eye"></span> {$item.views_num}</span>
-					<span class="v-item__header__info__item">{lang key='added_on'} {$item.date_added|date_format:$core.config.date_format}</b></span>
-				</div>
 				<div class="ia-car-info ia-car-info--block">
 					<span class="ia-car-info__icon ia-car-info__icon--body">{lang key='field_autos_body_type'}: <a href="{$smarty.const.IA_URL}search/cars/body:{$item.body_type}/"><b>{lang key="field_autos_body_type+{$item.body_type}"}</b></a></span>
 					{if $item.engine}
@@ -59,6 +37,7 @@
 					{if !empty($item.mileage)}
 						<span class="ia-car-info__icon ia-car-info__icon--mileage">{lang key='field_autos_mileage'}: <b>{$item.mileage}</b></span>
 					{/if}
+					<span class="ia-car-info__icon">{lang key='field_autos_condition'}: <a href="{$searchPageUrl}condition:{$item.condition}/"><b>{lang key="field_autos_condition+{$item.condition}"}</b></a></span>
 				</div>
 				<div class="v-item__header__social">
 					<a href="https://www.facebook.com/sharer/sharer.php?u={$smarty.const.IA_SELF|escape:'url'}&t={$item.model}, {$item.release_year}" title="Share on Facebook" target="_blank" class="btn btn-sm btn-facebook"><i class="fa fa-facebook"></i></a>
@@ -68,6 +47,33 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="v-item-info clearfix m-t m-b">
+		<div class="v-item__header__info ">
+			{if $item.sponsored}<span class="v-item__header__info__item label label-warning">{lang key='sponsored'}</span>{/if}
+			{if $item.featured}<span class="v-item__header__info__item label label-info">{lang key='featured'}</span>{/if}
+			<span class="v-item__header__info__item"><span class="fa fa-eye"></span> {$item.views_num}</span>
+			<span class="v-item__header__info__item">{lang key='added_on'} {$item.date_added|date_format:$core.config.date_format}</b></span>
+		</div>
+		<ul class="content__actions">
+			{if $member && $member.id == $item.member_id}
+				<li>
+					<span class="label label-{$item.status}" title="{lang key=$item.status default=$item.status}"><span class="fa fa-warning"></span> {lang key=$item.status default=$item.status}</span>
+				</li>
+			{/if}
+			{foreach $core.actions as $name => $action}
+				<li>
+					{if 'action-favorites' == $name}
+						{printFavorites item=$item itemtype=$item.item guests=true tpl='no-text'}
+					{else}
+						<a data-toggle="tooltip" title="{$action.title}" {foreach $action.attributes as $key => $value}{$key}="{$value}" {/foreach}>
+							<span class="fa fa-{$name}" title="{$action.title}"></span>
+						</a>
+					{/if}
+				</li>
+			{/foreach}
+		</ul>
 	</div>
 
 	<div class="v-item-info">

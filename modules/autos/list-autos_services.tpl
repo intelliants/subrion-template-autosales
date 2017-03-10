@@ -2,7 +2,7 @@
 	{if !empty($listing.logo)}
 		{$logo = unserialize($listing.logo[0])}
 		<a class="ia-item__image" href="{ia_url item='autos_services' data=$listing type='url'}">
-			{ia_image file=$logo title=$listing.title class='img-responsive'}
+			{ia_image file=$logo title=$listing.title class='img-responsive' type='thumbnail'}
 		</a>
 	{/if}
 

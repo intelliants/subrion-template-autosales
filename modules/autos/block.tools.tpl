@@ -19,7 +19,7 @@
 									<div class="ia-item f-tools__c__item">
 										{if !empty($entry.pictures)}
 											<a href="{ia_url type='url' item='autos' data=$entry}" class="ia-item__image">
-												{ia_image file=$entry.pictures[0] title=$entry.model|strip_tags|truncate:'30' width=60}
+												{ia_image file=$entry.pictures[0] title=$entry.model|strip_tags|truncate:'30' width=60 type='thumbnail'}
 											</a>
 										{/if}
 
@@ -71,7 +71,7 @@ $(function() {
 										<div class="ia-item f-tools__c__item">
 											{if !empty($entry.pictures)}
 												<a href="{ia_url type='url' item='autos' data=$entry}" class="ia-item__image">
-													{ia_image file=$entry.pictures[0] title=$entry.model|strip_tags|truncate:'30' width=60}
+													{ia_image file=$entry.pictures[0] title=$entry.model|strip_tags|truncate:'30' width=60 type='thumbnail'}
 												</a>
 											{/if}
 
@@ -173,7 +173,7 @@ $(function() {
 								<div class="ia-item">
 									{if !empty($entry.pictures)}
 										<a href="{ia_url type='url' item='autos' data=$entry}" class="ia-item__image">
-											{ia_image file=$entry.pictures[0] title=$entry.model|strip_tags|truncate:'30' width=60}
+											{ia_image file=$entry.pictures[0] title=$entry.model|strip_tags|truncate:'30' width=60 type='thumbnail'}
 										</a>
 									{/if}
 
@@ -197,7 +197,7 @@ $(function() {
 								<div class="ia-item">
 									{if !empty($entry.pictures)}
 										<a href="{ia_url type='url' item='autos' data=$entry}" class="ia-item__image">
-											{ia_image file=$entry.pictures[0] title=$entry.model|strip_tags|truncate:'30' width=60}
+											{ia_image file=$entry.pictures[0] title=$entry.model|strip_tags|truncate:'30' width=60 type='thumbnail'}
 										</a>
 									{/if}
 

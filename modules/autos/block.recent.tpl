@@ -4,7 +4,9 @@
 			<div class="ia-card ia-card--hsm -{$item.status}">
 
 				{if $item.pictures}
-					<a class="ia-card__image" href="{$item.link}">{ia_image file=$item.pictures[0] title=$item.model width=80}</a>
+					<a class="ia-card__image" href="{$item.link}">{ia_image file=$item.pictures[0] title=$item.model type='thumbnail'}</a>
+				{else}
+					<a class="ia-card__image" href="{$item.link}"><img class="img-responsive" src="{$img}no-car-preview.png" alt="{$item.model}"></a>
 				{/if}
 
 				<div class="ia-card__content">
