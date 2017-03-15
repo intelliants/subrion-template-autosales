@@ -81,15 +81,6 @@
 			</div>
 		{/if}
 
-		{if !empty($item.description)}
-			<div class="v-item-info">
-				<div class="v-item-info__section">
-					<h3>{lang key='details'}</h3>
-					{$item.description|escape:'html'}
-				</div>
-			</div>
-		{/if}
-
 		<div class="m-t-lg">
 			{ia_hooker name='smartyItemViewBeforeTabs'}
 
@@ -99,3 +90,12 @@
 		</div>
 	</div>
 </div>
+
+{if !empty($item.description)}
+	<div class="v-item-info">
+		<div class="v-item-info__section">
+			<h3>{lang key='details'}</h3>
+			{$item.description|escape:'html'}
+		</div>
+	</div>
+{/if}
