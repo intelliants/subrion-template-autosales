@@ -17,9 +17,8 @@
 			{/foreach}
 		</ul>
 		<h2>
-			{if $item.logo}
-				{$logo = unserialize($item.logo[0])}
-				{ia_image file=$logo title=$item.title type='thumbnail' class='img-circle' width=30}
+			{if !empty($item.logo)}
+				{ia_image file=$item.logo title=$item.title type='thumbnail' class='img-circle' width=30}
 			{/if}
 			<span>{$item.title}</span>
 		</h2>
@@ -36,7 +35,7 @@
 						{$services = explode(',', $item.categories)}
 
 						{foreach $services as $service}
-							{lang key="field_autos_services_categories_{$service}"}{if !$service@last}, {/if}
+							{lang key="field_autos_services_categories+{$service}"}{if !$service@last}, {/if}
 						{/foreach}
 					</td>
 				</tr>
