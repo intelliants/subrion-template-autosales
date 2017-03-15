@@ -1,6 +1,6 @@
 <div class="v-item m-b">
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-7">
 			{if !empty($item.pictures)}
 				{ia_add_media files='js: _IA_TPL_fotorama'}
 
@@ -8,7 +8,7 @@
 					<div class="fotorama" 
 						 data-nav="thumbs"
 						 data-width="100%"
-						 data-ratio="800/400"
+						 data-ratio="16/9"
 						 data-allowfullscreen="true"
 						 data-fit="{$core.config.template_fotorama_car}">
 						{foreach $item.pictures as $entry}
@@ -22,7 +22,7 @@
 				</div>
 			{/if}
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-5">
 			<div class="v-item__header">
 				<h2><span>{$item.model}, {$item.release_year}</span></h2>
 				<div class="v-item__header__price">{$item.price_formatted}</div>
