@@ -39,15 +39,15 @@
 								<select class="form-control" name="body">
 									<option value="">{lang key='field_autos_body_type'}</option>
 									{foreach $car_blocks_data.search.body_types as $key => $value}
-										<option value="{$key}"{if isset($smarty.get.body) && $smarty.get.body == $key} selected{/if}>{$value}</option>
+										<option value="{$key}"{if isset($smarty.get.body) && $smarty.get.body == $key} selected{/if}>{$value|escape:'html'}</option>
 									{/foreach}
 								</select>
 							</div>
 							<div class="col-md-4">
-								<input class="form-control" type="text" name="price[f]" placeholder="{lang key='as_price_min'}" value="{if isset($smarty.get.price.f)}{$smarty.get.price.f}{/if}">
+								<input class="form-control" type="number" name="price[f]" placeholder="{lang key='as_price_min'}"{if isset($smarty.get.price.f)} value="{$smarty.get.price.f|escape:'html'}"{/if}>
 							</div>
 							<div class="col-md-4">
-								<input class="form-control" type="text" name="price[t]" placeholder="{lang key='as_price_max'}" value="{if isset($smarty.get.price.t)}{$smarty.get.price.t}{/if}">
+								<input class="form-control" type="number" name="price[t]" placeholder="{lang key='as_price_max'}"{if isset($smarty.get.price.t)} value="{$smarty.get.price.t|escape:'html'}"{/if}>
 							</div>
 						</div>
 					</div>
@@ -101,13 +101,10 @@
 				data: $form.serialize(),
 				action: 'quicksearch_total'
 			}).done(function(response) {
-				if (typeof response.count == 'boolean' || typeof response.count == 'undefined')
+				var count = 0;
+				if (typeof response.count != 'undefined')
 				{
-					var count = 0;
-				}
-				else
-				{
-					var count = response.count;
+					count = response.count;
 				}
 
 				$this.find('button').html(buttonText + ' (' + count + ')');
