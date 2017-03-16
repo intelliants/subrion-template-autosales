@@ -6,35 +6,35 @@
 		<div class="ia-item__actions">
 			{printFavorites item=$listing itemtype='members' guests=true tpl='no-text'}
 			{accountActions item=$listing itemtype='members'}
-			<a href="{ia_url item='members' data=$listing type='url'}">{lang key='view_profile'} <span class="fa fa-angle-double-right"></span></a>
+			<a href="{$listing.link}">{lang key='view_profile'} <span class="fa fa-angle-double-right"></span></a>
 		</div>
 
 		<h4 class="ia-item__title">
-			<a href="{ia_url item='members' data=$listing type='url'}">{$listing.fullname|default:$listing.username}</a>
+			<a href="{$listing.link}">{$listing.fullname|default:$listing.username}</a>
 		</h4>
 
 		<div class="ia-item__additional">
-			{if isset($listing.phone) && $listing.phone}
+			{if !empty($listing.phone)}
 				<p><span class="fa fa-phone"></span> {$listing.phone}</p>
 			{/if}
-			{if isset($listing.website) && $listing.website}
+			{if !empty($listing.website)}
 				<p><span class="fa fa-globe"></span> <a href="{$listing.website}">{lang key='field_website'}</a></p>
 			{/if}
-			{if isset($listing.facebook) && $listing.facebook}
+			{if !empty($listing.facebook)}
 				<p><span class="fa fa-facebook"></span> <a href="{$listing.facebook}">{lang key='field_facebook'}</a></p>
 			{/if}
-			{if isset($listing.twitter) && $listing.twitter}
+			{if !empty($listing.twitter)}
 				<p><span class="fa fa-twitter"></span> <a href="{$listing.twitter}">{lang key='field_twitter'}</a></p>
 			{/if}
-			{if isset($listing.gplus) && $listing.gplus}
+			{if !empty($listing.gplus)}
 				<p><span class="fa fa-google-plus"></span> <a href="{$listing.gplus}">{lang key='field_gplus'}</a></p>
 			{/if}
-			{if isset($listing.linkedin) && $listing.linkedin}
+			{if !empty($listing.linkedin)}
 				<p><span class="fa fa-linkedin"></span> <a href="{$listing.linkedin}">{lang key='field_linkedin'}</a></p>
 			{/if}
 		</div>
 
-		{if isset($listing.biography) && $listing.biography}
+		{if !empty($listing.biography)}
 			<p>{$listing.biography|escape|truncate:250:'...':true}</p>
 		{/if}
 

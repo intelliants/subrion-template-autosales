@@ -6,16 +6,16 @@
 		{foreach $categories as $category}
 			<div class="{$class_names[$num_columns - 1]}">
 				<div class="ia-cat">
-					{if isset($icons) && $icons}
+					{if !empty($icons)}
 						<span class="fa{if !empty($category.icon)} {$category.icon}{else} fa-folder-open{/if}"></span>
 					{/if}
 
 					<a href="{$category.url}">{$category.title|escape}</a>
-					{if isset($show_amount) && $show_amount}
+					{if !empty($show_amount)}
 						&mdash; {$category.num|default:0}
 					{/if}
 
-					{if isset($category.subcategories) && $category.subcategories}
+					{if !empty($category.subcategories)}
 						<div class="ia-cat__sub">
 							{foreach $category.subcategories as $subcategory}
 								<a href="{ia_url type='url' item=$item data=$subcategory}">{$subcategory.title|escape}</a>{if !$subcategory@last}, {/if}

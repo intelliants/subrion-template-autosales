@@ -4,8 +4,8 @@
 	<summary>Template for Subrion Autos Script</summary>
 	<author>Gleb Surinov</author>
 	<contributor>Intelliants LLC</contributor>
-	<version>1.2.2</version>
-	<date>2017-03-10</date>
+	<version>1.2.3</version>
+	<date>2017-03-17</date>
 	<compatibility>4.1</compatibility>
 
 	<dependency type="package" exist="1">autos</dependency>
@@ -295,8 +295,8 @@
 	</blocks>
 
 	<phrases>
-		<phrase category="frontend" key="website_address">22-76, 10th md, Bishkek, Kyrgyzstan</phrase>
-		<phrase category="frontend" key="website_phone">+996 (312) 56-33-71</phrase>
+		<phrase category="frontend" key="website_address">2729 Nostrand Avenue, NY</phrase>
+		<phrase category="frontend" key="website_phone">1-800- 322-933994</phrase>
 		<phrase category="frontend" key="register">Sign up</phrase>
 		<phrase category="frontend" key="login_sign_up">Login / Sign up</phrase>
 		<phrase category="frontend" key="register_tag">Register on our website and sell your car. Many features included in your private area.</phrase>
