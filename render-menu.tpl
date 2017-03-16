@@ -5,6 +5,7 @@
 {elseif 'account' == $position}
 	{if 'account' == $menu.name && $member && $core.config.members_enabled}
 		<ul class="inv__nav">
+			<li class="hidden-xs"><a href="{$smarty.const.IA_URL}comparison/"><span class="fa fa-balance-scale"></span> {lang key='page_title_autos_comparison'}</a></li>
 			<li class="hidden-xs"><a href="{$smarty.const.IA_URL}favorites/"><span class="fa fa-star text-warning"></span> {lang key='wishlist'}</a></li>
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -19,6 +20,7 @@
 		</ul>
 	{else}
 		<ul class="inv__nav">
+			<li><a href="{$smarty.const.IA_URL}comparison/"><span class="fa fa-balance-scale"></span> {lang key='page_title_autos_comparison'}</a></li>
 			<li class="hidden-xs"><a href="{$smarty.const.IA_URL}favorites/"><span class="fa fa-star text-warning"></span> {lang key='wishlist'}</a></li>
 			<li><a data-toggle="modal" data-target="#loginModal" href="#" class=""><span class="fa fa-user"></span> <span class="-guest">{lang key='login_sign_up'}</span></a></li>
 			<li><a class="" href="{$core.packages.autos.url}add/"><span class="fa fa-car"></span> {lang key='sell_car'}</a></li>

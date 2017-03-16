@@ -57,11 +57,19 @@
 			<span class="v-item__header__info__item">{lang key='added_on'} {$item.date_added|date_format:$core.config.date_format}</b></span>
 		</div>
 		<ul class="content__actions">
-			{if $member && $member.id == $item.member_id}
-				<li>
-					<span class="label label-{$item.status}" title="{lang key=$item.status default=$item.status}"><span class="fa fa-warning"></span> {lang key=$item.status default=$item.status}</span>
-				</li>
-			{/if}
+			<li>
+				<a href="#" class="btn-compare{if ($item.compare)} btn-compare--added{/if}" data-id="{$item.id}">
+					<span class="btn-compare__icon fa fa-balance-scale"></span>
+					<span class="btn-compare__text">
+						{if ($item.compare)}
+							{lang key='remove_from_compare'}
+						{else}
+							{lang key='add_to_compare'}
+						{/if}
+					</span>
+				</a>
+				{ia_print_js files='_IA_URL_modules/autos/js/front/comparison'}
+			</li>
 			{foreach $core.actions as $name => $action}
 				<li>
 					{if 'action-favorites' == $name}
@@ -73,6 +81,11 @@
 					{/if}
 				</li>
 			{/foreach}
+			{if $member && $member.id == $item.member_id}
+				<li>
+					<span class="label label-{$item.status}" title="{lang key=$item.status default=$item.status}"><span class="fa fa-warning"></span> {lang key=$item.status default=$item.status}</span>
+				</li>
+			{/if}
 		</ul>
 	</div>
 

@@ -42,6 +42,21 @@
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-h"></span></a>
 			<ul class="dropdown-menu pull-right no-drop">
 				<li>{printFavorites item=$listing itemtype='autos' guests=true}</li>
+				{if 'favorites' != $core.page.name}
+					<li>
+						<a href="#" class="btn-compare{if ($listing.compare)} btn-compare--added{/if}" data-id="{$listing.id}">
+							<span class="btn-compare__icon fa fa-balance-scale"></span>
+							<span class="btn-compare__text">
+								{if ($listing.compare)}
+									{lang key='remove_from_compare'}
+								{else}
+									{lang key='add_to_compare'}
+								{/if}
+							</span>
+						</a>
+						{ia_print_js files='_IA_URL_modules/autos/js/front/comparison'}
+					</li>
+				{/if}
 				<li><a href="{$listing.link}"><span class="fa fa-automobile"></span> {lang key='car_details'}</a></li>
 				<li>{accountActions item=$listing itemtype='autos'}</li>
 			</ul>
