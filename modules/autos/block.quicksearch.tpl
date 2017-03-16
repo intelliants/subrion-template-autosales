@@ -20,7 +20,7 @@
 								<select class="form-control js-car-make" name="mk">
 									<option value="">{lang key='make'}</option>
 									{foreach $car_blocks_data.search.categories as $item}
-										<option value="{$item.id}"{if isset($smarty.get.mk) && $smarty.get.mk == $item.id} selected{/if}>{$item.name|escape:'html'}</option>
+										<option value="{$item.id}"{if isset($smarty.get.mk) && $smarty.get.mk == $item.id} selected{/if}>{$item.name|escape}</option>
 									{/foreach}
 								</select>
 							</div>
@@ -39,15 +39,15 @@
 								<select class="form-control" name="body">
 									<option value="">{lang key='field_autos_body_type'}</option>
 									{foreach $car_blocks_data.search.body_types as $key => $value}
-										<option value="{$key}"{if isset($smarty.get.body) && $smarty.get.body == $key} selected{/if}>{$value|escape:'html'}</option>
+										<option value="{$key}"{if isset($smarty.get.body) && $smarty.get.body == $key} selected{/if}>{$value|escape}</option>
 									{/foreach}
 								</select>
 							</div>
 							<div class="col-md-4">
-								<input class="form-control" type="text" name="price[f]" placeholder="{lang key='as_price_min'}"{if isset($smarty.get.price.f)} value="{$smarty.get.price.f|escape:'html'}"{/if}>
+								<input class="form-control" type="text" name="price[f]" placeholder="{lang key='as_price_min'}"{if isset($smarty.get.price.f)} value="{$smarty.get.price.f|escape}"{/if}>
 							</div>
 							<div class="col-md-4">
-								<input class="form-control" type="text" name="price[t]" placeholder="{lang key='as_price_max'}"{if isset($smarty.get.price.t)} value="{$smarty.get.price.t|escape:'html'}"{/if}>
+								<input class="form-control" type="text" name="price[t]" placeholder="{lang key='as_price_max'}"{if isset($smarty.get.price.t)} value="{$smarty.get.price.t|escape}"{/if}>
 							</div>
 						</div>
 					</div>

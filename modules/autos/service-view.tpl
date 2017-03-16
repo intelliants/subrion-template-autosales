@@ -95,7 +95,7 @@
 	<div class="v-item-info">
 		<div class="v-item-info__section">
 			<h3>{lang key='details'}</h3>
-			{$item.description|escape:'html'}
+			{$item.description|escape}
 		</div>
 	</div>
 {/if}

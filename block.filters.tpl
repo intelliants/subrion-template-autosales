@@ -51,8 +51,8 @@
 						<div class="range-slider">
 							<input class="hidden no-js js-range-slider" id="range_{$field.name}" type="text" name="">
 
-							<input id="range_{$field.name}_from" type="hidden" name="{$field.name}[f]" maxlength="{$field.length}" {if $selected} value="{$selected.f|escape:'html'}"{/if}>
-							<input id="range_{$field.name}_to" type="hidden" name="{$field.name}[t]" maxlength="{$field.length}" {if $selected} value="{$selected.t|escape:'html'}"{/if}>
+							<input id="range_{$field.name}_from" type="hidden" name="{$field.name}[f]" maxlength="{$field.length}" {if $selected} value="{$selected.f|escape}"{/if}>
+							<input id="range_{$field.name}_to" type="hidden" name="{$field.name}[t]" maxlength="{$field.length}" {if $selected} value="{$selected.t|escape}"{/if}>
 
 							{ia_add_js}
 $(function()
@@ -102,7 +102,7 @@ $(function()
 						</div>
 					{case iaField::TEXT}
 					{case iaField::TEXTAREA break}
-						<input class="form-control" type="text" name="{$field.name}"{if is_string($selected)} value="{$selected|escape:'html'}"{/if}>
+						<input class="form-control" type="text" name="{$field.name}"{if is_string($selected)} value="{$selected|escape}"{/if}>
 
 					{case iaField::TREE}
 						<select class="form-control" name="{$field.name}[]" multiple>

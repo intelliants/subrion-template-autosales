@@ -1,6 +1,6 @@
 {if isset($car_blocks_data.random)}
 	<div class="container">
-		<h2 class="title title--accent">{$block.title|escape:'html'}</h2>
+		<h2 class="title title--accent">{$block.title|escape}</h2>
 		<div class="owl-carousel ia-carousel js-carousel-random">
 			{foreach $car_blocks_data.random as $item}
 				<div class="ia-carousel__item">

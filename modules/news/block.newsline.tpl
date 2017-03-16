@@ -12,9 +12,9 @@
 								<a href="{$smarty.const.IA_URL}news/{$entry.id}-{$entry.alias}" class="pull-right">{ia_image file=$entry.image title=$entry.title width=100}</a>
 							{/if}
 							<h4 class="media-heading">
-								<a href="{$smarty.const.IA_URL}news/{$entry.id}-{$entry.alias}">{$entry.title|escape:'html'}</a>
+								<a href="{$smarty.const.IA_URL}news/{$entry.id}-{$entry.alias}">{$entry.title|escape}</a>
 							</h4>
-							<p class="text-fade-50">{$entry.date|date_format:$core.config.date_format} {lang key='by'} {$entry.fullname|escape:'html'}</p>
+							<p class="text-fade-50">{$entry.date|date_format:$core.config.date_format} {lang key='by'} {$entry.fullname|escape}</p>
 							<p>{$entry.body|strip_tags|truncate:$core.config.newsline_body_max:'...'} <a href="{$smarty.const.IA_URL}news/{$entry.id}-{$entry.alias}.html">{lang key='continue_reading'}</a></p>
 						</div>
 					</div>

@@ -150,7 +150,7 @@
 								{if $item.vin_code}
 									<tr>
 										<td>{lang key='field_autos_vin_code'}</td>
-										<td>{$item.vin_code|escape:'html'}</td>
+										<td>{$item.vin_code|escape}</td>
 									</tr>
 								{/if}
 								{if $item.fuel_type}

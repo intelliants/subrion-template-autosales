@@ -4,7 +4,7 @@
 			{foreach $car_blocks_data.body as $name => $entry}
 				<div class="col-md-4">
 					<a href="{$entry.url}" class="body-list__style body-list__style--{$name}">
-						<span></span> {$entry.title|escape:'html'}
+						<span></span> {$entry.title|escape}
 					</a>
 				</div>
 
