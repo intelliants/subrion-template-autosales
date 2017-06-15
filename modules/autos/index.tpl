@@ -5,7 +5,28 @@
 {if !empty($models)}
     {ia_block title={lang key='autos_models'} style='fixed' id='auto_categories'}
         <div class="ia-categories">
-            {include file='ia-categories.tpl' categories=$models item='autos_models' show_amount=true num_columns=$core.config.autos_model_columns}
+
+            {$num_columns = ((isset($core.config.autos_model_columns)) ? $core.config.autos_model_columns : 2)}
+            {$class_names = ['col-md-12', 'col-md-6', 'col-md-4', 'col-md-3']}
+
+            <div class="row ia-cats">
+                {foreach $models as $model}
+                <div class="{$class_names[$num_columns - 1]}">
+                    <div class="ia-cat">
+                        {if !empty($model.icon)}
+                            <img src="{$core.page.nonProtocolUrl}uploads/{$model.icon.path}" alt="{$model.title|escape}">
+                        {/if}
+
+                        <a href="{$model.link}">{$model.title|escape}</a> &mdash; {$model.num|default:0}
+                    </div>
+                </div>
+
+                {if $model@iteration % $num_columns == 0 && !$model@last}
+            </div>
+            <div class="row ia-cats">
+                {/if}
+                {/foreach}
+            </div>
         </div>
     {/ia_block}
 {/if}
