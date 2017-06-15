@@ -14,7 +14,7 @@
                 <div class="{$class_names[$num_columns - 1]}">
                     <div class="ia-cat">
                         {if !empty($model.icon)}
-                            <img src="{$core.page.nonProtocolUrl}uploads/{$model.icon.path}" alt="{$model.title|escape}">
+                            {ia_image file=$model.icon type='large' title=$model.title|escape}
                         {/if}
 
                         <a href="{$model.link}">{$model.title|escape}</a> &mdash; {$model.num|default:0}
