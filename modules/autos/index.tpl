@@ -1,5 +1,5 @@
-{if isset($category)}
-    <div class="page-description">{$category.description}</div>
+{if !empty($model)}
+    <div class="page-description">{$model.description}</div>
 {/if}
 
 {if !empty($models)}
@@ -95,7 +95,7 @@
     </div>
 
     {navigation aTotal=$pagination.total aTemplate=$pagination.url aItemsPerPage=$pagination.limit aIgnore=true}
-{elseif isset($category.id) && $category.level}
+{elseif isset($model.id) && $model.level}
     <div class="alert alert-info">
         {if 'autos_search' == $core.page.name}
             {lang key='nothing_found'}
@@ -103,8 +103,6 @@
             {lang key='no_listings_to_show'}
         {/if}
     </div>
-{elseif !isset($category.id)}
-    <div class="alert alert-info">
-        {lang key='no_listings_to_show'}
-    </div>
+{elseif !isset($model.id)}
+    <div class="alert alert-info">{lang key='no_listings_to_show'}</div>
 {/if}
