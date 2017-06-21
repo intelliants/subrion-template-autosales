@@ -211,6 +211,11 @@
 .upload-list {
 
   &__item {
+    @media (max-width: @grid-float-breakpoint) {
+      [class^="col-md"] + [class^="col-md"] {
+        margin-top: 5px !important;
+      }
+    }
 
     & + & {
       margin-top: 10px;
