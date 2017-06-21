@@ -52,9 +52,12 @@
                                             <input class="form-control" type="password" tabindex="5" name="password">
                                         </div>
 
-                                        <div class="form-group form-actions">
-                                            <button class="btn btn-primary" type="submit" tabindex="6" name="login">{lang key='login'}</button>
-                                            <a class="btn btn-link" href="{$smarty.const.IA_URL}forgot/">{lang key='forgot'}</a>
+                                        <div class="form-group form-actions clearfix">
+                                            <div class="checkbox pull-left">
+                                                <label><input type="checkbox" name="remember"> {lang key='remember_me'}</label>
+                                            </div>
+                                            <button class="btn btn-primary pull-right" type="submit" tabindex="6" name="login">{lang key='login'}</button>
+                                            <a class="btn btn-link pull-right" href="{$smarty.const.IA_URL}forgot/">{lang key='forgot'}</a>
                                         </div>
                                     </form>
                                 </div>
