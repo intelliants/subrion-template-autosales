@@ -64,7 +64,7 @@ $(function()
         min: "{$field.range[0]}",
         max: "{$field.range[1]}",
         from: $("#range_{$field.name}_from").val(),
-        to: $("#range_{$field.name}_to").val()
+        to: $("#range_{$field.name}_to").val(),
         {if 'release_year' == $field.name}
             prettify_enabled: false,
             step: 1,
@@ -77,7 +77,6 @@ $(function()
             $('#range_{$field.name}_to').val(obj.to).trigger('change');
         }
     });
-    console.log(typeof({$field.range[0]}))
     var ionSlider_{$field.name} = $('#range_{$field.name}').data('ionRangeSlider');
 
     $('#range_{$field.name}_from').on('change', function() {
