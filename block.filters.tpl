@@ -51,8 +51,8 @@
                         <div class="range-slider">
                             <input class="hidden no-js js-range-slider" id="range_{$field.name}" type="text" name="">
 
-                            <input id="range_{$field.name}_from" type="hidden" name="{$field.name}[f]" maxlength="{$field.length}" {if $selected} value="{$selected.f|escape}"{/if}>
-                            <input id="range_{$field.name}_to" type="hidden" name="{$field.name}[t]" maxlength="{$field.length}" {if $selected} value="{$selected.t|escape}"{/if}>
+                            <input id="range_{$field.name}_from" type="hidden" name="{$field.name}[f]" maxlength="{$field.length}"  value="{if $selected} {$selected.f|escape}{else}{$field.range[0]|escape}{/if}">
+                            <input id="range_{$field.name}_to" type="hidden" name="{$field.name}[t]" maxlength="{$field.length}"  value="{if $selected}{$selected.t|escape}{else}{$field.range[1]|escape}{/if}">
 
                             {ia_add_js}
 $(function()
@@ -64,7 +64,7 @@ $(function()
         min: "{$field.range[0]}",
         max: "{$field.range[1]}",
         from: $("#range_{$field.name}_from").val(),
-        to: $('#range_{$field.name}_to').val(),
+        to: $("#range_{$field.name}_to").val()
         {if 'release_year' == $field.name}
             prettify_enabled: false,
             step: 1,
@@ -77,7 +77,7 @@ $(function()
             $('#range_{$field.name}_to').val(obj.to).trigger('change');
         }
     });
-
+    console.log(typeof({$field.range[0]}))
     var ionSlider_{$field.name} = $('#range_{$field.name}').data('ionRangeSlider');
 
     $('#range_{$field.name}_from').on('change', function() {
