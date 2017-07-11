@@ -1,6 +1,6 @@
 <div class="sec sec-search{if 'index' != $core.page.name} sec-search--inner{/if}">
     <div class="container">
-        <form class="q-search s-counter{if 'index' != $core.page.name} q-search--inner{/if}" action="{$smarty.const.IA_URL}search/cars/">
+        <form class="q-search s-counter{if 'index' != $core.page.name} q-search--inner{/if}" action="{$smarty.const.IA_URL}search/cars/" id="js-autos-qs-form">
             <div class="row">
                 <div class="col-md-{if 'index' == $core.page.name}6{else}12{/if}">
                     <h4>{lang key='qsearch_find_a_perfect_car'}</h4>
