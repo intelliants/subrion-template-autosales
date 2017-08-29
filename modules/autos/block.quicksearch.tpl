@@ -89,26 +89,20 @@
 {ia_print_js files='_IA_URL_modules/autos/js/front/search'}
 
 {ia_add_js}
-    $(function() {
-        var $form = $('form.s-counter'),
-        buttonText = $form.find('button').html();
+$(function() {
+    var $form = $('form.s-counter'),
+    buttonText = $form.find('button').html();
 
-        $form.change(function()
-        {
-            var $this = $(this);
+    $form.change(function() {
+        var $this = $(this);
 
-            $.post(intelli.config.ia_url + 'autos.json', {
-                data: $form.serialize(),
-                action: 'quicksearch_total'
-            }).done(function(response) {
-                var count = 0;
-                if (typeof response.count != 'undefined')
-                {
-                    count = response.count;
-                }
-
-                $this.find('button').html(buttonText + ' (' + count + ')');
-            });
+        intelli.post(intelli.config.ia_url + 'autos.json', {
+            data: $form.serialize(),
+            action: 'quicksearch_total'
+        }).done(function(response) {
+            var count = typeof response.count !== 'undefined' ? response.count : 0;
+            $this.find('button').html(buttonText + ' (' + count + ')');
         });
     });
+});
 {/ia_add_js}
