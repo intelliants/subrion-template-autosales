@@ -30,12 +30,12 @@
         <table class="v-item-table">
             <tbody>
                 <tr>
-                    <td>{lang key='field_autos_services_categories'}</td>
+                    <td>{lang key='field_autos_service_categories'}</td>
                     <td>
                         {$services = explode(',', $item.categories)}
 
                         {foreach $services as $service}
-                            {lang key="field_autos_services_categories+{$service}"}{if !$service@last}, {/if}
+                            {lang key="field_autos_service_categories+{$service}"}{if !$service@last}, {/if}
                         {/foreach}
                     </td>
                 </tr>

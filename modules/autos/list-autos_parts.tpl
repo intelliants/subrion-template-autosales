@@ -1,6 +1,6 @@
 <div class="ia-item ia-item--border ia-item--card ia-item--{$listing.status} {if $listing.featured}ia-item--featured{/if} {if $listing.sponsored}ia-item--sponsored{/if}">
     {if !empty($listing.pictures)}
-        <a class="ia-item__image" href="{ia_url item='autos_parts' data=$listing type='url'}">
+        <a class="ia-item__image" href="{$listing.link}">
             {ia_image file=$listing.pictures[0] title=$listing.title class='img-responsive' type='thumbnail'}
         </a>
     {/if}
@@ -16,19 +16,19 @@
 
     <div class="ia-item__content">
         <div class="ia-item__actions">
-            {printFavorites item=$listing itemtype='autos_parts' guests=true tpl='no-text'}
-            {accountActions item=$listing itemtype='autos_parts'}
+            {printFavorites item=$listing itemtype='autos_part' guests=true tpl='no-text'}
+            {accountActions item=$listing itemtype='autos_part'}
         </div>
 
         <div class="ia-item__title">
-            {ia_url item='autos_parts' type='link' data=$listing text="{$listing.title}"}
+            {ia_url item='autos_part' type='link' data=$listing text="{$listing.title|escape}"}
         </div>
 
         <p>{$listing.description|escape|truncate:150:'...':true}</p>
 
         <div class="ia-item__price">
             <p>{$core.config.currency} {$listing.price}</p>
-            <a class="btn btn-success" href="{ia_url item='autos_parts' data=$listing type='url'}">{lang key='view'}</a>
+            <a class="btn btn-success" href="{$listing.link}">{lang key='view'}</a>
         </div>
     </div>
 </div>
