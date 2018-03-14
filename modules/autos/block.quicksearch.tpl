@@ -9,10 +9,10 @@
                             <div class="col-md-4">
                                 <div class="btn-group btn-group-justified" data-toggle="buttons">
                                     <label class="btn btn-default">
-                                        <input type="radio" name="condition" value="new" autocomplete="off"> <span class="fa fa-check"></span> {lang key='field_autos_condition+new'}
+                                        <input type="radio" name="condition" value="new" autocomplete="off"> <span class="fa fa-check"></span> {lang key='field_auto_condition+new'}
                                     </label>
                                     <label class="btn btn-default active">
-                                        <input type="radio" name="condition" value="used" autocomplete="off" checked> <span class="fa fa-check"></span> {lang key='field_autos_condition+used'}
+                                        <input type="radio" name="condition" value="used" autocomplete="off" checked> <span class="fa fa-check"></span> {lang key='field_auto_condition+used'}
                                     </label>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <select class="form-control" name="body">
-                                    <option value="">{lang key='field_autos_body_type'}</option>
+                                    <option value="">{lang key='field_auto_body_type'}</option>
                                     {foreach $car_blocks_data.search.body_types as $key => $value}
                                         <option value="{$key}"{if isset($smarty.get.body) && $smarty.get.body == $key} selected{/if}>{$value|escape}</option>
                                     {/foreach}
