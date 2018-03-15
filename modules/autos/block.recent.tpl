@@ -19,12 +19,12 @@
                     {/if}
                     <p>
                         {if $item.engine}
-                            {lang key="field_autos_engine+{$item.engine}"}{if $item.engine_type} {lang key="field_autos_engine_type+{$item.engine_type}"}{/if}{if $item.engine_size} {$item.engine_size}{/if},
+                            {lang key="field_auto_engine+{$item.engine}"}{if $item.engine_type} {lang key="field_auto_engine_type+{$item.engine_type}"}{/if}{if $item.engine_size} {$item.engine_size}{/if},
                         {/if}
                         {if $item.transmission}
-                            {lang key="field_autos_transmission+{$item.transmission}"}
+                            {lang key="field_auto_transmission+{$item.transmission}"}
                         {/if}
-                        {if $item.exterior_color && isset($item.exterior_color)}, {lang key="field_autos_exterior_color+{$item.exterior_color}"}{/if}
+                        {if $item.exterior_color && isset($item.exterior_color)}, {lang key="field_auto_exterior_color+{$item.exterior_color}"}{/if}
                     </p>
                 </div>
             </div>
