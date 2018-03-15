@@ -10,7 +10,7 @@
                             <a class="ia-card__image" href="{$item.link}">
                                 {ia_image file=$item.pictures[0] title=$item.model type='thumbnail'}
 
-                                <span class="ia-card__badge">{lang key="field_autos_condition+{$item.condition}"}</span>
+                                <span class="ia-card__badge">{lang key="field_auto_condition+{$item.condition}"}</span>
 
                                 <span class="ia-card__support-info">
                                     <span class="pull-left"><span class="fa fa-image"></span> {$item.pictures_num}</span>
@@ -54,12 +54,12 @@
                             {/if}
                             <p class="ia-card__text">
                                 {if $item.engine}
-                                    {lang key="field_autos_engine+{$item.engine}"}{if $item.engine_type} {lang key="field_autos_engine_type+{$item.engine_type}"}{/if}{if $item.engine_size} {$item.engine_size}{/if},
+                                    {lang key="field_auto_engine+{$item.engine}"}{if $item.engine_type} {lang key="field_auto_engine_type+{$item.engine_type}"}{/if}{if $item.engine_size} {$item.engine_size}{/if},
                                 {/if}
                                 {if $item.transmission}
-                                    {lang key="field_autos_transmission+{$item.transmission}"},
+                                    {lang key="field_auto_transmission+{$item.transmission}"},
                                 {/if}
-                                {lang key="field_autos_exterior_color+{$item.exterior_color}"}
+                                {lang key="field_auto_exterior_color+{$item.exterior_color}"}
                             </p>
                         </div>
                     </div>

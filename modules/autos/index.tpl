@@ -45,14 +45,14 @@
                             {if 'release_year' != $sorting.field}
                                 {lang key=$sorting.field}
                             {else}
-                                {lang key='field_autos_release_year'}
+                                {lang key='field_auto_release_year'}
                             {/if}
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="{$smarty.const.IA_SELF}?sort=title" rel="nofollow"><span class="fa fa-font"></span> {lang key='title'}</a></li>
                             <li><a href="{$smarty.const.IA_SELF}?sort=price" rel="nofollow"><span class="fa fa-dollar"></span> {lang key='price'}</a></li>
-                            <li><a href="{$smarty.const.IA_SELF}?sort=year" rel="nofollow"><span class="fa fa-calendar"></span> {lang key='field_autos_release_year'}</a></li>
+                            <li><a href="{$smarty.const.IA_SELF}?sort=year" rel="nofollow"><span class="fa fa-calendar"></span> {lang key='field_auto_release_year'}</a></li>
                             <li><a href="{$smarty.const.IA_SELF}?sort=date" rel="nofollow"><span class="fa fa-clock-o"></span> {lang key='date'}</a></li>
                         </ul>
                     </div>
@@ -81,14 +81,14 @@
         <div class="ia-cards__items{if isset($smarty.cookies.cardsLayout)} -{$smarty.cookies.cardsLayout}{else} -list{/if}">
             <div class="row">
                 {foreach $listings as $listing}
-                    <div class="col-md-3">
-                        {include file='extra:autos/list-autos'}
-                    </div>
+                <div class="col-md-3">
+                    {include file='extra:autos/list-autos'}
+                </div>
 
-                    {if $listing@iteration % 4 == 0 && !$listing@last}
-                        </div>
-                        <div class="row">
-                    {/if}
+                {if $listing@iteration % 4 == 0 && !$listing@last}
+            </div>
+            <div class="row">
+                {/if}
                 {/foreach}
             </div>
         </div>

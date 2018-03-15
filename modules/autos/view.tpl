@@ -27,17 +27,17 @@
                 <h2><span>{$item.model}, {$item.release_year}</span></h2>
                 <div class="v-item__header__price">{$item.price_formatted}</div>
                 <div class="ia-car-info ia-car-info--block">
-                    <span class="ia-car-info__icon ia-car-info__icon--body">{lang key='field_autos_body_type'}: <a href="{$smarty.const.IA_URL}search/cars/body:{$item.body_type}/"><b>{lang key="field_autos_body_type+{$item.body_type}"}</b></a></span>
+                    <span class="ia-car-info__icon ia-car-info__icon--body">{lang key='field_auto_body_type'}: <a href="{$smarty.const.IA_URL}search/cars/body:{$item.body_type}/"><b>{lang key="field_auto_body_type+{$item.body_type}"}</b></a></span>
                     {if $item.engine}
-                        <span class="ia-car-info__icon ia-car-info__icon--engine">{lang key='field_autos_engine'}: <b>{lang key="field_autos_engine+{$item.engine}"}{if $item.engine_type} {lang key="field_autos_engine_type+{$item.engine_type}"}{/if}{if !empty($item.engine_size)} {$item.engine_size}{/if}</b></span>
+                        <span class="ia-car-info__icon ia-car-info__icon--engine">{lang key='field_auto_engine'}: <b>{lang key="field_auto_engine+{$item.engine}"}{if $item.engine_type} {lang key="field_auto_engine_type+{$item.engine_type}"}{/if}{if !empty($item.engine_size)} {$item.engine_size}{/if}</b></span>
                     {/if}
                     {if $item.transmission}
-                        <span class="ia-car-info__icon ia-car-info__icon--transmission">{lang key='field_autos_transmission'}: <a href="{$smarty.const.IA_URL}search/cars/transmission:{$item.transmission}/"><b>{lang key="field_autos_transmission+{$item.transmission}"}</b></a></span>
+                        <span class="ia-car-info__icon ia-car-info__icon--transmission">{lang key='field_auto_transmission'}: <a href="{$smarty.const.IA_URL}search/cars/transmission:{$item.transmission}/"><b>{lang key="field_auto_transmission+{$item.transmission}"}</b></a></span>
                     {/if}
                     {if !empty($item.mileage)}
-                        <span class="ia-car-info__icon ia-car-info__icon--mileage">{lang key='field_autos_mileage'}: <b>{$item.mileage}</b></span>
+                        <span class="ia-car-info__icon ia-car-info__icon--mileage">{lang key='field_auto_mileage'}: <b>{$item.mileage}</b></span>
                     {/if}
-                    <span class="ia-car-info__icon">{lang key='field_autos_condition'}: <a href="{$searchPageUrl}condition:{$item.condition}/"><b>{lang key="field_autos_condition+{$item.condition}"}</b></a></span>
+                    <span class="ia-car-info__icon">{lang key='field_auto_condition'}: <a href="{$searchPageUrl}condition:{$item.condition}/"><b>{lang key="field_auto_condition+{$item.condition}"}</b></a></span>
                 </div>
                 <div class="v-item__header__social">
                     <a href="https://www.facebook.com/sharer/sharer.php?u={$smarty.const.IA_SELF|escape:'url'}&t={$item.model}, {$item.release_year}" title="Share on Facebook" target="_blank" class="btn btn-sm btn-facebook"><i class="fa fa-facebook"></i></a>
@@ -76,7 +76,7 @@
                         {printFavorites item=$item itemtype=$item.item guests=true tpl='no-text'}
                     {else}
                         <a data-toggle="tooltip" title="{$action.title}" {foreach $action.attributes as $key => $value}{$key}="{$value}" {/foreach}>
-                            <span class="fa fa-{$name}" title="{$action.title}"></span>
+                        <span class="fa fa-{$name}" title="{$action.title}"></span>
                         </a>
                     {/if}
                 </li>
@@ -96,36 +96,36 @@
                 <div class="col-md-6">
                     <table class="v-item-table">
                         <tbody>
-                            {if $item.door_count}
-                                <tr>
-                                    <td>{lang key='field_autos_door_count'}</td>
-                                    <td>{lang key="field_autos_door_count+{$item.door_count}"}</td>
-                                </tr>
-                            {/if}
-                            {if $item.exterior_color}
-                                <tr>
-                                    <td>{lang key='field_autos_exterior_color'}</td>
-                                    <td><a href="{$smarty.const.IA_URL}search/cars/exterior_color:{$item.exterior_color}/">{lang key="field_autos_exterior_color+{$item.exterior_color}"}</a></td>
-                                </tr>
-                            {/if}
-                            {if $item.metallic}
-                                <tr>
-                                    <td>{lang key='field_autos_metallic'}</td>
-                                    <td>{lang key="field_autos_metallic+{$item.metallic}"}</td>
-                                </tr>
-                            {/if}
-                            {if $item.interior_color}
-                                <tr>
-                                    <td>{lang key='field_autos_interior_color'}</td>
-                                    <td>{lang key="field_autos_interior_color+{$item.interior_color}"}</td>
-                                </tr>
-                            {/if}
-                            {if $item.interior_leather}
-                                <tr>
-                                    <td>{lang key='field_autos_interior_leather'}</td>
-                                    <td>{lang key="field_autos_interior_leather+{$item.interior_leather}"}</td>
-                                </tr>
-                            {/if}
+                        {if $item.door_count}
+                            <tr>
+                                <td>{lang key='field_auto_door_count'}</td>
+                                <td>{lang key="field_auto_door_count+{$item.door_count}"}</td>
+                            </tr>
+                        {/if}
+                        {if $item.exterior_color}
+                            <tr>
+                                <td>{lang key='field_auto_exterior_color'}</td>
+                                <td><a href="{$smarty.const.IA_URL}search/cars/exterior_color:{$item.exterior_color}/">{lang key="field_auto_exterior_color+{$item.exterior_color}"}</a></td>
+                            </tr>
+                        {/if}
+                        {if $item.metallic}
+                            <tr>
+                                <td>{lang key='field_auto_metallic'}</td>
+                                <td>{lang key="field_auto_metallic+{$item.metallic}"}</td>
+                            </tr>
+                        {/if}
+                        {if $item.interior_color}
+                            <tr>
+                                <td>{lang key='field_auto_interior_color'}</td>
+                                <td>{lang key="field_auto_interior_color+{$item.interior_color}"}</td>
+                            </tr>
+                        {/if}
+                        {if $item.interior_leather}
+                            <tr>
+                                <td>{lang key='field_auto_interior_leather'}</td>
+                                <td>{lang key="field_auto_interior_leather+{$item.interior_leather}"}</td>
+                            </tr>
+                        {/if}
                         </tbody>
                     </table>
                 </div>
@@ -134,36 +134,36 @@
                     <div class="col-md-6">
                         <table class="v-item-table">
                             <tbody>
-                                {if $item.horse_power}
-                                    <tr>
-                                        <td>{lang key='field_autos_horse_power'}</td>
-                                        <td>{$item.horse_power}</td>
-                                    </tr>
-                                {/if}
+                            {if $item.horse_power}
+                                <tr>
+                                    <td>{lang key='field_auto_horse_power'}</td>
+                                    <td>{$item.horse_power}</td>
+                                </tr>
+                            {/if}
 
-                                {if $item.drive_type}
-                                    <tr>
-                                        <td>{lang key='field_autos_drive_type'}</td>
-                                        <td><a href="{$smarty.const.IA_URL}search/cars/drive_type:{$item.drive_type}/">{lang key="field_autos_drive_type+{$item.drive_type}"}</a></td>
-                                    </tr>
-                                {/if}
-                                {if $item.vin_code}
-                                    <tr>
-                                        <td>{lang key='field_autos_vin_code'}</td>
-                                        <td>{$item.vin_code|escape}</td>
-                                    </tr>
-                                {/if}
-                                {if $item.fuel_type}
-                                    <tr>
-                                        <td>{lang key='field_autos_fuel_type'}</td>
-                                        <td>
-                                            {assign fuel explode(',', $item.fuel_type)}
-                                            {foreach $fuel as $one}
-                                                {lang key="field_autos_fuel_type+{$one}"}{if !$one@last}, {/if}
-                                            {/foreach}
-                                        </td>
-                                    </tr>
-                                {/if}
+                            {if $item.drive_type}
+                                <tr>
+                                    <td>{lang key='field_auto_drive_type'}</td>
+                                    <td><a href="{$smarty.const.IA_URL}search/cars/drive_type:{$item.drive_type}/">{lang key="field_auto_drive_type+{$item.drive_type}"}</a></td>
+                                </tr>
+                            {/if}
+                            {if $item.vin_code}
+                                <tr>
+                                    <td>{lang key='field_auto_vin_code'}</td>
+                                    <td>{$item.vin_code|escape}</td>
+                                </tr>
+                            {/if}
+                            {if $item.fuel_type}
+                                <tr>
+                                    <td>{lang key='field_auto_fuel_type'}</td>
+                                    <td>
+                                        {assign fuel explode(',', $item.fuel_type)}
+                                        {foreach $fuel as $one}
+                                            {lang key="field_auto_fuel_type+{$one}"}{if !$one@last}, {/if}
+                                        {/foreach}
+                                    </td>
+                                </tr>
+                            {/if}
                             </tbody>
                         </table>
                     </div>
@@ -189,7 +189,7 @@
                     {$itemFeatures = explode(',', $item.options_features)}
 
                     {foreach array_keys($features) as $opt}
-                        <div class="v-item-features__item {if in_array($opt, $itemFeatures)} active{/if}"><span class="fa fa-check-square"></span> {lang key="field_autos_options_features+{$opt}"}</div>
+                        <div class="v-item-features__item {if in_array($opt, $itemFeatures)} active{/if}"><span class="fa fa-check-square"></span> {lang key="field_auto_options_features+{$opt}"}</div>
                     {/foreach}
                 </div>
             </div>
@@ -197,7 +197,7 @@
 
         {if !empty($item.additional_info)}
             <div class="v-item-info__section">
-                <h3>{lang key='field_autos_additional_info'}</h3>
+                <h3>{lang key='field_auto_additional_info'}</h3>
                 {$item.additional_info}
             </div>
         {/if}
