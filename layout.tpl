@@ -32,6 +32,7 @@
 
         {ia_add_js}
             intelli.pageName = '{$core.page.name}';
+			intelli.securityToken = '{$securityToken}';
 
             {foreach $core.customConfig as $key => $value}
                 intelli.config.{$key} = '{$value}';
