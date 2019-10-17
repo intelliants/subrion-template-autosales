@@ -6,6 +6,9 @@
 // ==========================================================================
 
 @media print {
+
+    @page { size: auto;  margin: 0mm; }
+
     *,
     *:before,
     *:after {
@@ -34,6 +37,13 @@
     a[href^="javascript:"]:after {
         content: "";
     }
+
+   td  a, a{
+        &::after{
+            display: none !important;
+        }
+    }
+
 
     pre,
     blockquote {
@@ -163,18 +173,82 @@
     }
 
     // view page
+    #block_autos_calculator{
+      display: none !important;
+    }
 
     .v-item {
 
         &__gallery {
             width: 50%;
             float: left;
-            margin-right: 20px;
+            margin-left: 15%;
+
+          .fotorama{
+
+            &__nav{
+              display: none !important;
+            }
+          }
         }
 
         .content__actions {
             display: none !important;
         }
+
+        &__header{
+          float: left;
+
+          .ia-car-info.ia-car-info--block{
+            font-size: 20px;
+
+            span{
+              padding: 0;
+            }
+          }
+
+            &__social{
+                display: none !important;
+            }
+        }
+
+        .m-t.m-b{
+             display: none !important;
+        }
+
+      .v-item-info{
+
+        &__section{
+          border: 2px dashed @brand-primary;
+          border-radius: 10px;
+          padding: 30px;
+          margin-top: 10px !important;
+
+          h3{
+            color: @brand-primary !important;
+            border-color:  @brand-primary !important;
+          }
+
+          .fieldset{
+            padding: 0px !important;
+
+            &__header{
+              color: @brand-primary !important;
+              font-size: 18px;
+              font-weight: bold;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+
+    }
+
+    .f-tools{
+      display: none !important;
+    }
+    .footer{
+      display: none !important;
     }
 
     .service-view {
@@ -184,7 +258,9 @@
         }
     }
 
-
+    .inv{
+        display: none !important;
+    }
 
     // Intelli specific changes end
 }
